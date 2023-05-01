@@ -71,7 +71,8 @@
             android:text="@string/get_more_apps"
             android:textSize="@dimen/about_text"
             app:color="?attr/text_color"
-            app:drawableLeftCompat="@drawable/rate"
+            app:drawableLeftCompat="@drawable/baseline_favorite_border_24"
+            app:drawableTint="@color/text_color"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutRate" />
 
         <TextView
@@ -85,7 +86,8 @@
             android:text="@string/share_this_app"
             android:textSize="@dimen/about_text"
             app:color="?attr/text_color"
-            app:drawableLeftCompat="@drawable/rate"
+            app:drawableLeftCompat="@drawable/baseline_share_24"
+            app:drawableTint="@color/text_color"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutMoreApp" />
 
         <View
