@@ -1,4 +1,4 @@
-package com.darkempire78.opencalculator
+package com.roy.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import com.darkempire78.opencalculator.R
 import com.roy.db.MyPreferences
 import com.roy.model.Themes
 import java.util.*

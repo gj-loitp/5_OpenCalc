@@ -32,6 +32,7 @@ import com.roy.helper.Expression
 import com.roy.helper.NumberFormatter
 import com.roy.model.History
 import com.roy.model.Themes
+import com.roy.ui.SettingsActivity
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
