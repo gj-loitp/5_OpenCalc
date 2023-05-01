@@ -1,7 +1,5 @@
 package com.roy.ui
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -41,68 +39,24 @@ class AboutActivity : AppCompatActivity() {
         // Set app version
         val versionName =
             this.getString(R.string.app_version_title) + " " + BuildConfig.VERSION_NAME
-        binding.aboutAppVersion.text = versionName
+        binding.tvAboutAppVersion.text = versionName
 
         // back button
-        binding.aboutBackButton.setOnClickListener {
+        binding.ivAboutBack.setOnClickListener {
             finish()
-        }
-
-        // Translate
-        binding.aboutTranslate.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("https://hosted.weblate.org/engage/opencalc/")
-            )
-            startActivity(browserIntent)
         }
 
         // Rate
         binding.aboutRate.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("https://play.google.com/store/apps/details?id=com.darkempire78.opencalculator")
-            )
-            startActivity(browserIntent)
+            //TODO
         }
 
-        // Tip
-        binding.aboutDonate.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("https://www.paypal.me/ImDarkempire")
-            )
-            startActivity(browserIntent)
-        }
-
-        // Github
-        binding.aboutGithub.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("https://github.com/Darkempire78/OpenCalc")
-            )
-            startActivity(browserIntent)
-        }
-
-        // Discord
-        binding.aboutDiscord.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("https://discord.com/invite/sPvJmY7mcV")
-            )
-            startActivity(browserIntent)
-        }
-
-        binding.aboutPrivacyPolicy.setOnClickListener {
-            val browserIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("https://gist.githubusercontent.com/Darkempire78/1688314e8b75d5d32ac0503a97ec77a0/raw/2dcc4cf13f9755405e486e51e4658626c289986a/OpenCalc%2520Privacy%2520Policy.md")
-            )
-            startActivity(browserIntent)
+        binding.tvAboutPrivacyPolicy.setOnClickListener {
+            //TODO
         }
 
         var clickAppVersionCount = 0
-        binding.aboutAppVersion.setOnClickListener {
+        binding.tvAboutAppVersion.setOnClickListener {
             clickAppVersionCount++
             if (clickAppVersionCount > 3) {
                 Toast.makeText(
