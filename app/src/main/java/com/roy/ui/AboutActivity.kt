@@ -1,4 +1,4 @@
-package com.darkempire78.opencalculator
+package com.roy.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.darkempire78.opencalculator.BuildConfig
+import com.darkempire78.opencalculator.R
 import com.darkempire78.opencalculator.databinding.ActivityAboutBinding
 import com.roy.db.MyPreferences
 import com.roy.model.Themes
