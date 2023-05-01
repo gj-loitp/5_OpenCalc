@@ -8,7 +8,6 @@ import com.roy.db.MyPreferences
 
 //TODO firebase
 //TODO ad
-//TODO leak canary
 //TODO keystore
 //TODO permission ad id
 
@@ -16,6 +15,7 @@ import com.roy.db.MyPreferences
 //ic_launcher
 //policy
 //rate app, more app, share app
+//leak canary
 
 //https://github.com/tplloi/OpenCalc/tree/dev
 class OpenCalcApplication : Application() {
