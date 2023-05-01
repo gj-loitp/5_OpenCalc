@@ -5,9 +5,9 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
-import com.darkempire78.opencalculator.R
 import com.google.android.material.color.DynamicColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.roy.R
 import com.roy.db.MyPreferences
 
 class Themes(private val context: Context) {

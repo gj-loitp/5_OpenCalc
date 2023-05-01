@@ -21,9 +21,9 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.darkempire78.opencalculator.R
-import com.darkempire78.opencalculator.databinding.ActivityMainBinding
+import com.roy.R
 import com.roy.adt.HistoryAdapter
+import com.roy.databinding.ActivityMainBinding
 import com.roy.db.MyPreferences
 import com.roy.ext.Calculator
 import com.roy.ext.division_by_0

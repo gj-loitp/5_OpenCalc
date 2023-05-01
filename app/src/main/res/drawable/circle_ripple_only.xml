@@ -3,8 +3,8 @@
     android:color="?attr/button_ripple_color">
     <item>
         <shape android:shape="rectangle">
-            <corners android:radius="1000dp"/>
-            <solid android:color="?attr/background_color"/>
+            <corners android:radius="1000dp" />
+            <solid android:color="?attr/background_color" />
         </shape>
     </item>
 </ripple>

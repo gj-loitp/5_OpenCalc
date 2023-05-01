@@ -12,8 +12,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.roy.R
 import com.roy.model.History
-import com.darkempire78.opencalculator.R
 
 class HistoryAdapter(
     private var history: MutableList<History>,
