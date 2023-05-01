@@ -4,7 +4,6 @@ import android.animation.LayoutTransition
 import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -23,6 +22,10 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
+import com.roy.ext.Calculator
+import com.roy.ext.division_by_0
+import com.roy.ext.domain_error
+import com.roy.ext.syntax_error
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
@@ -38,8 +41,10 @@ var appLanguage: Locale = Locale.getDefault()
 class MainActivity : AppCompatActivity() {
     private lateinit var view: View
 
-    private val decimalSeparatorSymbol = DecimalFormatSymbols.getInstance().decimalSeparator.toString()
-    private val groupingSeparatorSymbol = DecimalFormatSymbols.getInstance().groupingSeparator.toString()
+    private val decimalSeparatorSymbol =
+        DecimalFormatSymbols.getInstance().decimalSeparator.toString()
+    private val groupingSeparatorSymbol =
+        DecimalFormatSymbols.getInstance().groupingSeparator.toString()
     private var isInvButtonClicked = false
     private var isEqualLastAction = false
     private var isDegreeModeActivated = true // Set degree by default
@@ -87,8 +92,8 @@ class MainActivity : AppCompatActivity() {
             false
         )
         binding.historyRecylcleView.layoutManager = historyLayoutMgr
-        historyAdapter = HistoryAdapter(mutableListOf()) {
-            value -> run {
+        historyAdapter = HistoryAdapter(mutableListOf()) { value ->
+            run {
                 //val valueUpdated = value.replace(".", NumberFormatter.decimalSeparatorSymbol)
                 updateDisplay(window.decorView, value)
             }
@@ -108,8 +113,13 @@ class MainActivity : AppCompatActivity() {
                     binding.slidingLayout.scrollableView = binding.historyRecylcleView
                 }
             }
-            override fun onPanelStateChanged(panel: View, previousState: PanelState, newState: PanelState) {
-                if (newState == PanelState.ANCHORED){ // To prevent the panel from getting stuck in the middle
+
+            override fun onPanelStateChanged(
+                panel: View,
+                previousState: PanelState,
+                newState: PanelState
+            ) {
+                if (newState == PanelState.ANCHORED) { // To prevent the panel from getting stuck in the middle
                     binding.slidingLayout.panelState = PanelState.EXPANDED
                 }
             }
@@ -135,13 +145,14 @@ class MainActivity : AppCompatActivity() {
 
         // Makes the input take the whole width of the screen by default
         val screenWidthPX = resources.displayMetrics.widthPixels
-        binding.input.minWidth = screenWidthPX - (binding.input.paddingRight + binding.input.paddingLeft) // remove the paddingHorizontal
+        binding.input.minWidth =
+            screenWidthPX - (binding.input.paddingRight + binding.input.paddingLeft) // remove the paddingHorizontal
 
         // Do not clear after equal button if you move the cursor
         binding.input.accessibilityDelegate = object : View.AccessibilityDelegate() {
             override fun sendAccessibilityEvent(host: View, eventType: Int) {
                 super.sendAccessibilityEvent(host, eventType)
-                if (eventType == AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED){
+                if (eventType == AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED) {
                     isEqualLastAction = false
                 }
                 if (!binding.input.isCursorVisible) {
@@ -155,16 +166,22 @@ class MainActivity : AppCompatActivity() {
             when {
                 binding.resultDisplay.text.toString() != "" -> {
                     val clipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                    clipboardManager.setPrimaryClip(ClipData.newPlainText("Copied result", binding.resultDisplay.text))
+                    clipboardManager.setPrimaryClip(
+                        ClipData.newPlainText(
+                            "Copied result",
+                            binding.resultDisplay.text
+                        )
+                    )
                     // Only show a toast for Android 12 and lower.
                     if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
                         Toast.makeText(this, R.string.value_copied, Toast.LENGTH_SHORT).show()
                     true
                 }
+
                 else -> false
             }
         }
-        
+
         // Handle changes into input to update resultDisplay
         binding.input.addTextChangedListener(object : TextWatcher {
             private var beforeTextLength = 0
@@ -249,13 +266,28 @@ class MainActivity : AppCompatActivity() {
         if (errorStatus != errorStatusOld) {
             // Set error color
             if (errorStatus) {
-                binding.input.setTextColor(ContextCompat.getColor(this,R.color.calculation_error_color))
-                binding.resultDisplay.setTextColor(ContextCompat.getColor(this,R.color.calculation_error_color))
+                binding.input.setTextColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.calculation_error_color
+                    )
+                )
+                binding.resultDisplay.setTextColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.calculation_error_color
+                    )
+                )
             }
             // Clear error color
             else {
-                binding.input.setTextColor(ContextCompat.getColor(this,R.color.text_color))
-                binding.resultDisplay.setTextColor(ContextCompat.getColor(this,R.color.text_second_color))
+                binding.input.setTextColor(ContextCompat.getColor(this, R.color.text_color))
+                binding.resultDisplay.setTextColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.text_second_color
+                    )
+                )
             }
             errorStatusOld = errorStatus
         }
@@ -268,7 +300,7 @@ class MainActivity : AppCompatActivity() {
                 it.toString()
             }
             if (anyNumber.contains(value)) {
-                    binding.input.setText("")
+                binding.input.setText("")
             } else {
                 binding.input.setSelection(binding.input.text.length)
                 binding.inputHorizontalScrollView.fullScroll(HorizontalScrollView.FOCUS_RIGHT)
@@ -293,20 +325,31 @@ class MainActivity : AppCompatActivity() {
 
             val newValue = leftValue + value + rightValue
 
-            var newValueFormatted = NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+            var newValueFormatted =
+                NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
 
             withContext(Dispatchers.Main) {
                 // Avoid two decimalSeparator in the same number
                 // 1. When you click on the decimalSeparator button
                 if (value == decimalSeparatorSymbol && decimalSeparatorSymbol in binding.input.text.toString()) {
-                    if (binding.input.text.toString().isNotEmpty())  {
+                    if (binding.input.text.toString().isNotEmpty()) {
                         var lastNumberBefore = ""
-                        if (cursorPosition > 0  && binding.input.text.toString().substring(0, cursorPosition).last() in "0123456789\\$decimalSeparatorSymbol") {
-                            lastNumberBefore = NumberFormatter.extractNumbers(binding.input.text.toString().substring(0, cursorPosition), decimalSeparatorSymbol).last()
+                        if (cursorPosition > 0 && binding.input.text.toString()
+                                .substring(0, cursorPosition)
+                                .last() in "0123456789\\$decimalSeparatorSymbol"
+                        ) {
+                            lastNumberBefore = NumberFormatter.extractNumbers(
+                                binding.input.text.toString().substring(0, cursorPosition),
+                                decimalSeparatorSymbol
+                            ).last()
                         }
                         var firstNumberAfter = ""
-                        if (cursorPosition < binding.input.text.length-1) {
-                            firstNumberAfter = NumberFormatter.extractNumbers(binding.input.text.toString().substring(cursorPosition, binding.input.text.length), decimalSeparatorSymbol).first()
+                        if (cursorPosition < binding.input.text.length - 1) {
+                            firstNumberAfter = NumberFormatter.extractNumbers(
+                                binding.input.text.toString()
+                                    .substring(cursorPosition, binding.input.text.length),
+                                decimalSeparatorSymbol
+                            ).first()
                         }
                         if (decimalSeparatorSymbol in lastNumberBefore || decimalSeparatorSymbol in firstNumberAfter) {
                             return@withContext
@@ -319,17 +362,29 @@ class MainActivity : AppCompatActivity() {
                     && decimalSeparatorSymbol in value
                     && value != decimalSeparatorSymbol // The value should not be *only* the decimal separator
                 ) {
-                    if (NumberFormatter.extractNumbers(value, decimalSeparatorSymbol).isNotEmpty()) {
-                        val firstValueNumber = NumberFormatter.extractNumbers(value, decimalSeparatorSymbol).first()
-                        val lastValueNumber = NumberFormatter.extractNumbers(value, decimalSeparatorSymbol).last()
+                    if (NumberFormatter.extractNumbers(value, decimalSeparatorSymbol)
+                            .isNotEmpty()
+                    ) {
+                        val firstValueNumber =
+                            NumberFormatter.extractNumbers(value, decimalSeparatorSymbol).first()
+                        val lastValueNumber =
+                            NumberFormatter.extractNumbers(value, decimalSeparatorSymbol).last()
                         if (decimalSeparatorSymbol in firstValueNumber || decimalSeparatorSymbol in lastValueNumber) {
-                            var numberBefore = binding.input.text.toString().substring(0, cursorPosition)
+                            var numberBefore =
+                                binding.input.text.toString().substring(0, cursorPosition)
                             if (numberBefore.last() !in "()*-/+^!√πe") {
-                                numberBefore = NumberFormatter.extractNumbers(numberBefore, decimalSeparatorSymbol).last()
+                                numberBefore = NumberFormatter.extractNumbers(
+                                    numberBefore,
+                                    decimalSeparatorSymbol
+                                ).last()
                             }
                             var numberAfter = ""
                             if (cursorPosition < binding.input.text.length - 1) {
-                                numberAfter = NumberFormatter.extractNumbers(binding.input.text.toString().substring(cursorPosition, binding.input.text.length), decimalSeparatorSymbol).first()
+                                numberAfter = NumberFormatter.extractNumbers(
+                                    binding.input.text.toString()
+                                        .substring(cursorPosition, binding.input.text.length),
+                                    decimalSeparatorSymbol
+                                ).first()
                             }
                             var tmpValue = value
                             var numberBeforeParenthesisLength = 0
@@ -337,11 +392,18 @@ class MainActivity : AppCompatActivity() {
                                 numberBefore = "($numberBefore)"
                                 numberBeforeParenthesisLength += 2
                             }
-                            if (decimalSeparatorSymbol in  numberAfter) {
+                            if (decimalSeparatorSymbol in numberAfter) {
                                 tmpValue = "($value)"
                             }
-                            val tmpNewValue = binding.input.text.toString().substring(0, (cursorPosition + numberBeforeParenthesisLength - numberBefore.length)) + numberBefore + tmpValue + rightValue
-                            newValueFormatted = NumberFormatter.format(tmpNewValue,  decimalSeparatorSymbol, groupingSeparatorSymbol)
+                            val tmpNewValue = binding.input.text.toString().substring(
+                                0,
+                                (cursorPosition + numberBeforeParenthesisLength - numberBefore.length)
+                            ) + numberBefore + tmpValue + rightValue
+                            newValueFormatted = NumberFormatter.format(
+                                tmpNewValue,
+                                decimalSeparatorSymbol,
+                                groupingSeparatorSymbol
+                            )
                         }
                     }
                 }
@@ -356,11 +418,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun roundResult(result : Double): Double {
+    private fun roundResult(result: Double): Double {
         if (result.isNaN() || result.isInfinite()) {
             return result
         }
-        return BigDecimal(result).setScale(MyPreferences(this).numberPrecision!!.toInt(), RoundingMode.HALF_EVEN).toDouble()
+        return BigDecimal(result).setScale(
+            MyPreferences(this).numberPrecision!!.toInt(),
+            RoundingMode.HALF_EVEN
+        ).toDouble()
     }
 
     private fun enableOrDisableScientistMode() {
@@ -403,14 +468,22 @@ class MainActivity : AppCompatActivity() {
                 domain_error = false
                 syntax_error = false
 
-                val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
+                val calculationTmp = Expression().getCleanExpression(
+                    binding.input.text.toString(),
+                    decimalSeparatorSymbol,
+                    groupingSeparatorSymbol
+                )
                 var result = Calculator().evaluate(calculationTmp, isDegreeModeActivated)
 
                 // If result is a number and it is finite
                 if (!result.isNaN() && result.isFinite()) {
                     // Round at 10^-12
                     result = roundResult(result)
-                    var formattedResult = NumberFormatter.format(result.toString().replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
+                    var formattedResult = NumberFormatter.format(
+                        result.toString().replace(".", decimalSeparatorSymbol),
+                        decimalSeparatorSymbol,
+                        groupingSeparatorSymbol
+                    )
 
                     // If result = -0, change it to 0
                     if (result == -0.0) {
@@ -419,7 +492,11 @@ class MainActivity : AppCompatActivity() {
                     // If the double ends with .0 we remove the .0
                     if ((result * 10) % 10 == 0.0) {
                         val resultString = String.format("%.0f", result)
-                        formattedResult = NumberFormatter.format(resultString, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                        formattedResult = NumberFormatter.format(
+                            resultString,
+                            decimalSeparatorSymbol,
+                            groupingSeparatorSymbol
+                        )
 
                         withContext(Dispatchers.Main) {
                             if (formattedResult != calculation) {
@@ -439,7 +516,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 } else withContext(Dispatchers.Main) {
                     if (result.isInfinite() && !division_by_0 && !domain_error) {
-                        if (result < 0) binding.resultDisplay.setText("-"+getString(R.string.infinity))
+                        if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
                         else binding.resultDisplay.setText(getString(R.string.value_too_large))
                     } else {
                         withContext(Dispatchers.Main) {
@@ -469,8 +546,10 @@ class MainActivity : AppCompatActivity() {
             val cursorPosition = binding.input.selectionStart
 
             // Get next / previous characters relative to the cursor
-            val nextChar = if (textLength - cursorPosition > 0) binding.input.text[cursorPosition].toString() else "0" // use "0" as default like it's not a symbol
-            val previousChar = if (cursorPosition > 0) binding.input.text[cursorPosition - 1].toString() else "0"
+            val nextChar =
+                if (textLength - cursorPosition > 0) binding.input.text[cursorPosition].toString() else "0" // use "0" as default like it's not a symbol
+            val previousChar =
+                if (cursorPosition > 0) binding.input.text[cursorPosition - 1].toString() else "0"
 
             if (currentSymbol != previousChar // Ignore multiple presses of the same button
                 && currentSymbol != nextChar
@@ -478,13 +557,16 @@ class MainActivity : AppCompatActivity() {
                 && previousChar != decimalSeparatorSymbol // Ensure that the previous character is not a comma
                 && nextChar != decimalSeparatorSymbol // Ensure that the next character is not a comma
                 && (previousChar != "(" // Ensure that we are not at the beginning of a parenthesis
-                || currentSymbol == "-")) { // Minus symbol is an override
+                        || currentSymbol == "-")
+            ) { // Minus symbol is an override
                 // If previous character is a symbol, replace it
                 if (previousChar.matches("[+\\-÷×^]".toRegex())) {
                     keyVibration(view)
 
-                    val leftString = binding.input.text.subSequence(0, cursorPosition-1).toString()
-                    val rightString = binding.input.text.subSequence(cursorPosition, textLength).toString()
+                    val leftString =
+                        binding.input.text.subSequence(0, cursorPosition - 1).toString()
+                    val rightString =
+                        binding.input.text.subSequence(cursorPosition, textLength).toString()
 
                     // Add a parenthesis if there is another symbol before minus
                     if (currentSymbol == "-") {
@@ -493,39 +575,36 @@ class MainActivity : AppCompatActivity() {
                             binding.input.setSelection(cursorPosition)
                         } else {
                             binding.input.setText(leftString + previousChar + currentSymbol + rightString)
-                            binding.input.setSelection(cursorPosition+1)
+                            binding.input.setSelection(cursorPosition + 1)
                         }
-                    }
-                    else if (cursorPosition > 1 && binding.input.text[cursorPosition-2] != '(') {
+                    } else if (cursorPosition > 1 && binding.input.text[cursorPosition - 2] != '(') {
                         binding.input.setText(leftString + currentSymbol + rightString)
                         binding.input.setSelection(cursorPosition)
-                    }
-                    else if (currentSymbol == "+") {
+                    } else if (currentSymbol == "+") {
                         binding.input.setText(leftString + rightString)
-                        binding.input.setSelection(cursorPosition-1)
+                        binding.input.setSelection(cursorPosition - 1)
                     }
                 }
                 // If next character is a symbol, replace it
                 else if (nextChar.matches("[+\\-÷×^%!]".toRegex())
-                    && currentSymbol != "%") { // Make sure that percent symbol doesn't replace succeeding symbols
+                    && currentSymbol != "%"
+                ) { // Make sure that percent symbol doesn't replace succeeding symbols
                     keyVibration(view)
 
                     val leftString = binding.input.text.subSequence(0, cursorPosition).toString()
-                    val rightString = binding.input.text.subSequence(cursorPosition+1, textLength).toString()
+                    val rightString =
+                        binding.input.text.subSequence(cursorPosition + 1, textLength).toString()
 
                     if (cursorPosition > 0 && previousChar != "(") {
                         binding.input.setText(leftString + currentSymbol + rightString)
-                        binding.input.setSelection(cursorPosition+1)
-                    }
-                    else if (currentSymbol == "+") binding.input.setText(leftString + rightString)
+                        binding.input.setSelection(cursorPosition + 1)
+                    } else if (currentSymbol == "+") binding.input.setText(leftString + rightString)
                 }
                 // Otherwise just update the display
                 else if (cursorPosition > 0 || nextChar != "0" && currentSymbol == "-") {
                     updateDisplay(view, currentSymbol)
-                }
-                else keyVibration(view)
-            }
-            else keyVibration(view)
+                } else keyVibration(view)
+            } else keyVibration(view)
         } else { // Allow minus symbol, even if the input is empty
             if (currentSymbol == "-") updateDisplay(view, currentSymbol)
             else keyVibration(view)
@@ -671,17 +750,30 @@ class MainActivity : AppCompatActivity() {
                 domain_error = false
                 syntax_error = false
 
-                val calculationTmp = Expression().getCleanExpression(binding.input.text.toString(), decimalSeparatorSymbol, groupingSeparatorSymbol)
-                val result = roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
+                val calculationTmp = Expression().getCleanExpression(
+                    binding.input.text.toString(),
+                    decimalSeparatorSymbol,
+                    groupingSeparatorSymbol
+                )
+                val result =
+                    roundResult((Calculator().evaluate(calculationTmp, isDegreeModeActivated)))
                 var resultString = result.toString()
-                var formattedResult = NumberFormatter.format(resultString.replace(".", decimalSeparatorSymbol), decimalSeparatorSymbol, groupingSeparatorSymbol)
+                var formattedResult = NumberFormatter.format(
+                    resultString.replace(".", decimalSeparatorSymbol),
+                    decimalSeparatorSymbol,
+                    groupingSeparatorSymbol
+                )
 
                 // If result is a number and it is finite
                 if (!result.isNaN() && result.isFinite()) {
                     // If there is an unused 0 at the end, remove it : 2.0 -> 2
                     if ((result * 10) % 10 == 0.0) {
                         resultString = String.format("%.0f", result)
-                        formattedResult = NumberFormatter.format(resultString, decimalSeparatorSymbol, groupingSeparatorSymbol)
+                        formattedResult = NumberFormatter.format(
+                            resultString,
+                            decimalSeparatorSymbol,
+                            groupingSeparatorSymbol
+                        )
                     }
 
                     // Hide the cursor before updating binding.input to avoid weird cursor movement
@@ -734,7 +826,8 @@ class MainActivity : AppCompatActivity() {
                                 )
 
                                 // Remove former results if > historySize preference
-                                val historySize = MyPreferences(this@MainActivity).historySize!!.toInt()
+                                val historySize =
+                                    MyPreferences(this@MainActivity).historySize!!.toInt()
                                 while (historySize > 0 && historyAdapter.itemCount >= historySize) {
                                     historyAdapter.removeFirstHistoryElement()
                                 }
@@ -757,15 +850,15 @@ class MainActivity : AppCompatActivity() {
                             if (division_by_0) {
                                 setErrorColor(true)
                                 binding.resultDisplay.setText(getString(R.string.division_by_0))
-                            }
-                            else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
+                            } else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
                             else binding.resultDisplay.setText(getString(R.string.value_too_large))
                         } else if (result.isNaN()) {
                             setErrorColor(true)
                             binding.resultDisplay.setText(getString(R.string.math_error))
                         } else {
                             binding.resultDisplay.setText(formattedResult)
-                            isEqualLastAction = true // Do not clear the calculation (if you click into a number) if there is an error
+                            isEqualLastAction =
+                                true // Do not clear the calculation (if you click into a number) if there is an error
                         }
                     }
                 }
@@ -797,10 +890,10 @@ class MainActivity : AppCompatActivity() {
         if (
             !(textLength > cursorPosition && binding.input.text.toString()[cursorPosition] in "×÷+-^")
             && (
-                openParentheses == closeParentheses
-                || binding.input.text.toString()[cursorPosition - 1] == '('
-                || binding.input.text.toString()[cursorPosition - 1] in "×÷+-^"
-            )
+                    openParentheses == closeParentheses
+                            || binding.input.text.toString()[cursorPosition - 1] == '('
+                            || binding.input.text.toString()[cursorPosition - 1] in "×÷+-^"
+                    )
         ) {
             updateDisplay(view, "(")
         } else {
@@ -823,11 +916,13 @@ class MainActivity : AppCompatActivity() {
 
         if (cursorPosition != 0 && textLength != 0) {
             // Check if it is a function to delete
-            val functionsList = listOf("cos⁻¹(", "sin⁻¹(", "tan⁻¹(", "cos(", "sin(", "tan(", "ln(", "log(", "exp(")
+            val functionsList =
+                listOf("cos⁻¹(", "sin⁻¹(", "tan⁻¹(", "cos(", "sin(", "tan(", "ln(", "log(", "exp(")
             for (function in functionsList) {
                 val leftPart = binding.input.text.subSequence(0, cursorPosition).toString()
                 if (leftPart.endsWith(function)) {
-                    newValue = binding.input.text.subSequence(0, cursorPosition - function.length).toString() +
+                    newValue = binding.input.text.subSequence(0, cursorPosition - function.length)
+                        .toString() +
                             binding.input.text.subSequence(cursorPosition, textLength).toString()
                     isFunction = true
                     functionLength = function.length - 1
@@ -841,16 +936,19 @@ class MainActivity : AppCompatActivity() {
                 val leftPartWithoutSpaces = leftPart.replace(groupingSeparatorSymbol, "")
                 functionLength = leftPart.length - leftPartWithoutSpaces.length
 
-                newValue = leftPartWithoutSpaces.subSequence(0, leftPartWithoutSpaces.length - 1).toString() +
+                newValue = leftPartWithoutSpaces.subSequence(0, leftPartWithoutSpaces.length - 1)
+                    .toString() +
                         binding.input.text.subSequence(cursorPosition, textLength).toString()
             }
 
-            val newValueFormatted = NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
+            val newValueFormatted =
+                NumberFormatter.format(newValue, decimalSeparatorSymbol, groupingSeparatorSymbol)
             var cursorOffset = newValueFormatted.length - newValue.length
             if (cursorOffset < 0) cursorOffset = 0
 
             binding.input.setText(newValueFormatted)
-            binding.input.setSelection((cursorPosition - 1 + cursorOffset - functionLength).takeIf { it > 0 } ?: 0)
+            binding.input.setSelection((cursorPosition - 1 + cursorOffset - functionLength).takeIf { it > 0 }
+                ?: 0)
         }
     }
 

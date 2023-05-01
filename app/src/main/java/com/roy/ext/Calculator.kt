@@ -1,7 +1,18 @@
-package com.darkempire78.opencalculator
+package com.roy.ext
 
 import java.math.BigInteger
-import kotlin.math.*
+import kotlin.math.acos
+import kotlin.math.asin
+import kotlin.math.atan
+import kotlin.math.cos
+import kotlin.math.exp
+import kotlin.math.ln
+import kotlin.math.log10
+import kotlin.math.pow
+import kotlin.math.round
+import kotlin.math.sin
+import kotlin.math.sqrt
+import kotlin.math.tan
 
 var division_by_0 = false
 var domain_error = false
@@ -21,7 +32,7 @@ class Calculator {
                     factorial *= i.toBigInteger()
                 }
                 factorial.toDouble()
-            } else gammaLanczos(number+1)
+            } else gammaLanczos(number + 1)
         }
     }
 
@@ -124,7 +135,7 @@ class Calculator {
                 } else if (eat('e'.code)) {
                     x = exp(1.0)
                 } else if (eat('π'.code)) {
-                        x = Math.PI
+                    x = Math.PI
                 } else if (ch >= 'a'.code && ch <= 'z'.code) { // functions
                     while (ch >= 'a'.code && ch <= 'z'.code) nextChar()
                     val func: String = equation.substring(startPos, pos)
@@ -139,20 +150,25 @@ class Calculator {
                         "sqrt" -> {
                             x = sqrt(x)
                         }
+
                         "ln" -> {
                             if (x.toInt() == 0) domain_error = true
                             x = ln(x)
                         }
+
                         "logten" -> {
                             if (x.toInt() == 0) domain_error = true
                             x = log10(x)
                         }
+
                         "xp" -> {
                             x = exp(x)
                         }
+
                         "factorial" -> {
                             x = factorial(x)
                         }
+
                         "sin" -> {
                             if (isDegreeModeActivated) {
                                 x = sin(Math.toRadians(x))
@@ -167,6 +183,7 @@ class Calculator {
                                 }
                             }
                         }
+
                         "cos" -> {
                             if (isDegreeModeActivated) {
                                 x = cos(Math.toRadians(x))
@@ -180,6 +197,7 @@ class Calculator {
                                 }
                             }
                         }
+
                         "tan" -> {
                             if (Math.toDegrees(x) == 90.0) {
                                 // Tangent is defined for R\{(2k+1)π/2, with k ∈ Z}
@@ -199,9 +217,10 @@ class Calculator {
                                 }
                             }
                         }
+
                         "arcsi" -> {
                             if (isDegreeModeActivated) {
-                                x = asin(x)*180/Math.PI
+                                x = asin(x) * 180 / Math.PI
                                 if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
@@ -212,9 +231,10 @@ class Calculator {
                                 }
                             }
                         }
+
                         "arcco" -> {
                             if (isDegreeModeActivated) {
-                                x = acos(x)*180/Math.PI
+                                x = acos(x) * 180 / Math.PI
                                 if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
@@ -225,9 +245,10 @@ class Calculator {
                                 }
                             }
                         }
+
                         "arcta" -> {
                             if (isDegreeModeActivated) {
-                                x = atan(x)*180/Math.PI
+                                x = atan(x) * 180 / Math.PI
                                 if (x > 0 && x < 1.0E-14) {
                                     x = round(x)
                                 }
@@ -238,6 +259,7 @@ class Calculator {
                                 }
                             }
                         }
+
                         else -> x = Double.NaN
                     }
                 } else {

@@ -1,5 +1,7 @@
 package com.darkempire78.opencalculator
 
+import com.roy.ext.syntax_error
+
 class Expression {
 
     fun getCleanExpression(calculation: String, decimalSeparatorSymbol: String, groupingSeparatorSymbol: String): String {
