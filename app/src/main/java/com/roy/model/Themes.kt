@@ -1,10 +1,11 @@
-package com.darkempire78.opencalculator
+package com.roy.model
 
 import android.app.Activity
 import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
+import com.darkempire78.opencalculator.R
 import com.google.android.material.color.DynamicColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.roy.db.MyPreferences
@@ -15,7 +16,7 @@ class Themes(private val context: Context) {
 
         // Themes
         private const val DEFAULT_THEME_INDEX = 0
-        const val AMOLED_THEME_INDEX = 1
+        private const val AMOLED_THEME_INDEX = 1
         private const val MATERIAL_YOU_THEME_INDEX = 2
 
         // used to go from Preference int value to actual theme
@@ -44,7 +45,7 @@ class Themes(private val context: Context) {
                 else
                     context.getString(R.string.theme_system)
 
-            val styles =  hashMapOf(
+            val styles = hashMapOf(
                 SYSTEM_STYLE_INDEX to systemName,
                 LIGHT_STYLE_INDEX to context.getString(R.string.theme_light),
                 DARK_STYLE_INDEX to context.getString(R.string.theme_dark),
@@ -63,21 +64,28 @@ class Themes(private val context: Context) {
                 }
             }
 
-            builder.setSingleChoiceItems(styles.values.toTypedArray(), checkedItem) { dialog, which ->
+            builder.setSingleChoiceItems(
+                styles.values.toTypedArray(),
+                checkedItem
+            ) { dialog, which ->
                 when (which) {
                     SYSTEM_STYLE_INDEX -> {
                         // system style uses the Material You theme if supported
-                        preferences.theme = if (DynamicColors.isDynamicColorAvailable()) MATERIAL_YOU_THEME_INDEX else DEFAULT_THEME_INDEX
+                        preferences.theme =
+                            if (DynamicColors.isDynamicColorAvailable()) MATERIAL_YOU_THEME_INDEX else DEFAULT_THEME_INDEX
                         preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
                     }
+
                     LIGHT_STYLE_INDEX -> {
                         preferences.theme = DEFAULT_THEME_INDEX
                         preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_NO
                     }
+
                     DARK_STYLE_INDEX -> {
                         preferences.theme = DEFAULT_THEME_INDEX
                         preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_YES
                     }
+
                     AMOLED_STYLE_INDEX -> {
                         preferences.theme = AMOLED_THEME_INDEX
                         preferences.forceDayNight = AppCompatDelegate.MODE_NIGHT_YES
@@ -106,7 +114,8 @@ class Themes(private val context: Context) {
     fun getTheme(): Int {
         var theme = MyPreferences(context).theme
         if (theme == -1) {
-            theme = if (DynamicColors.isDynamicColorAvailable()) MATERIAL_YOU_THEME_INDEX else DEFAULT_THEME_INDEX
+            theme =
+                if (DynamicColors.isDynamicColorAvailable()) MATERIAL_YOU_THEME_INDEX else DEFAULT_THEME_INDEX
         }
         return themeMap[theme] ?: DEFAULT_THEME_INDEX
     }

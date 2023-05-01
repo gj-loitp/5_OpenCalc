@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.roy.db.MyPreferences
+import com.roy.model.Themes
 import java.util.*
 
 class SettingsActivity : AppCompatActivity() {

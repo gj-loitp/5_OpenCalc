@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.darkempire78.opencalculator.databinding.ActivityAboutBinding
 import com.roy.db.MyPreferences
+import com.roy.model.Themes
 
 class AboutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAboutBinding
