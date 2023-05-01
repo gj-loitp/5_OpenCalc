@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode
 import com.roy.db.MyPreferences
 
 //TODO rate app, more app, share app
-//TODO policy
 //TODO firebase
 //TODO ad
 //TODO leak canary
@@ -16,6 +15,7 @@ import com.roy.db.MyPreferences
 
 //done
 //ic_launcher
+//policy
 
 //https://github.com/tplloi/OpenCalc/tree/dev
 class OpenCalcApplication : Application() {

@@ -8,6 +8,8 @@ import com.roy.BuildConfig
 import com.roy.R
 import com.roy.databinding.ActivityAboutBinding
 import com.roy.db.MyPreferences
+import com.roy.ext.openBrowserPolicy
+import com.roy.ext.rateApp
 import com.roy.model.Themes
 
 class AboutActivity : AppCompatActivity() {
@@ -48,11 +50,11 @@ class AboutActivity : AppCompatActivity() {
 
         // Rate
         binding.aboutRate.setOnClickListener {
-            //TODO
+            rateApp(packageName)
         }
 
         binding.tvAboutPrivacyPolicy.setOnClickListener {
-            //TODO
+            openBrowserPolicy()
         }
 
         var clickAppVersionCount = 0
