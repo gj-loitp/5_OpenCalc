@@ -59,7 +59,10 @@ class Calculator {
         return sqrt(2.0 * Math.PI) * t.pow(xx + 0.5) * exp(-t) * a
     }
 
-    fun evaluate(equation: String, isDegreeModeActivated: Boolean): Double {
+    fun evaluate(
+        equation: String,
+        isDegreeModeActivated: Boolean
+    ): Double {
         println("\n\n$equation")
         // https://stackoverflow.com/questions/3422673/how-to-evaluate-a-math-expression-given-in-string-form
         return object : Any() {
