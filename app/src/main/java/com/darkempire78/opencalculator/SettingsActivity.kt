@@ -20,6 +20,10 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setupViews(savedInstanceState)
+    }
+
+    private fun setupViews(savedInstanceState: Bundle?) {
         // Themes
         val themes = Themes(this)
         themes.applyDayNightOverride()
@@ -28,9 +32,9 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.settings_activity)
         if (savedInstanceState == null) {
             supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.settings, SettingsFragment())
-                    .commit()
+                .beginTransaction()
+                .replace(R.id.settings, SettingsFragment())
+                .commit()
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -45,15 +49,14 @@ class SettingsActivity : AppCompatActivity() {
         findViewById<ImageView>(R.id.settings_back_button).setOnClickListener {
             finish()
         }
-
-
     }
 
     class SettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey)
 
-            val appLanguagePreference = findPreference<Preference>("darkempire78.opencalculator.APP_LANGUAGE")
+            val appLanguagePreference =
+                findPreference<Preference>("darkempire78.opencalculator.APP_LANGUAGE")
 
             // remove the app language button if you are using an Android version lower than v33 (Android 13)
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
