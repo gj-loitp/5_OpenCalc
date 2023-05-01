@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">Калькулятор</string>
-    <string name="select_theme_title">Выберите тему</string>
     <string name="infinity">Бесконечность</string>
     <!-- Меню приложения -->
     <string name="app_menu_theme">Тема</string>
-    <string name="app_menu_vibration">Вибрация</string>
     <string name="app_menu_clear_history">Очистить Историю</string>
     <string name="app_menu_about">О приложении</string>
     <!-- Другое -->
@@ -29,14 +27,10 @@
     <string name="preferences_radians_instead_of_degrees_by_default_summary">Использовать радианы вместо градусов по умолчанию</string>
     <string name="preferences_advanced_category">РАСШИРЕННЫЕ</string>
     <string name="about_help_us_category">ПОМОЧЬ НАМ</string>
-    <string name="about_donate">Донат</string>
-    <string name="about_social_category">СОЦСЕТИ</string>
-    <string name="about_translate">Перевести</string>
     <string name="about_other_category">ПРОЧЕЕ</string>
     <string name="about_rate">Оценить приложение</string>
     <string name="app_version_title">Версия</string>
     <string name="thanks_for_using_opencalc">Спасибо за использование OpenCalc ❤️</string>
-    <string name="made_in_france">Сделано с ❤️ во Франции</string>
     <string name="privacy_policy">Политика конфиденциальности</string>
     <string name="about_title">О приложении</string>
     <string name="preferences_vibration_summary">Вибрация при нажатии кнопок</string>

@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true">
@@ -19,7 +18,6 @@
         tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".MainActivity">
@@ -48,7 +46,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/divideBy100Button"
                         style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -58,7 +55,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/factorialButton"
                         style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -68,7 +64,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/sevenButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -78,7 +73,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/eightButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -88,7 +82,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/nineButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -98,7 +91,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
-                        android:id="@+id/divideButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -110,7 +102,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/clearButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -140,7 +131,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/eButton"
                         style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -150,7 +140,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/piButton"
                         style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -160,7 +149,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/fourButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -170,7 +158,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/fiveButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -180,7 +167,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/sixButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -190,7 +176,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
-                        android:id="@+id/multiplyButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -202,7 +187,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
-                        android:id="@+id/parenthesesButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -222,7 +206,6 @@
                     android:layout_weight="1">
 
                     <Button
-                        android:id="@+id/invButton"
                         style="@style/CalculatorButton.Function"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -253,7 +236,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/oneButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -263,7 +245,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/twoButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -273,7 +254,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/threeButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -283,7 +263,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
-                        android:id="@+id/subtractButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -295,7 +274,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
-                        android:id="@+id/exponentButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -344,7 +322,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
-                        android:id="@+id/zeroButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -377,7 +354,6 @@
                         tools:ignore="RtlSymmetry,UsingOnClickInXml" />
 
                     <ImageButton
-                        android:id="@+id/addButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -389,7 +365,6 @@
                         tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
-                        android:id="@+id/equalsButton"
                         style="@style/CalculatorButton.Small"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -407,7 +382,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/display_background"
@@ -508,7 +482,6 @@
         app:layout_constraintGuide_percent="0.30" />
 
     <ImageButton
-        android:id="@+id/settingsButton"
         style="@style/RobotoFontCondensedLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

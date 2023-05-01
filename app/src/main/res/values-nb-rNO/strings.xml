@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">Kalkulator</string>
-    <string name="select_theme_title">Velg drakt</string>
     <string name="theme_light">Lys</string>
     <string name="theme_dark">Mørk</string>
     <string name="value_copied">Kopiert</string>
     <string name="app_menu_theme">Drakt</string>
-    <string name="app_menu_vibration">Vibrasjon</string>
     <string name="app_menu_clear_history">Tøm historikk</string>
     <string name="app_menu_about">Om</string>
     <string name="theme_system">System</string>
@@ -33,12 +31,8 @@
     <string name="preferences_general_category">Generelt</string>
     <string name="about_other_category">Annet</string>
     <string name="about_help_us_category">Hjelp oss</string>
-    <string name="about_donate">Doner</string>
     <string name="app_version_title">Versjon</string>
-    <string name="about_social_category">Sosialt</string>
     <string name="about_title">Om</string>
-    <string name="about_translate">Oversett</string>
-    <string name="made_in_france">Laget med ❤️ in Frankrike</string>
     <string name="thanks_for_using_opencalc">Takk for at du bruker OpenCalc ❤️</string>
     <string name="preferences_number_precision">Antall siffer etter komma</string>
     <string name="preferences_prevent_phone_from_sleeping_summary">Forhindre enheten i søvn når programmet er i forgrunnen</string>

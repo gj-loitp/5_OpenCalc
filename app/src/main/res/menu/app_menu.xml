@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menuThemeButton"
         android:onClick="selectThemeDialog"
         android:title="@string/app_menu_theme" />
 
     <item
-        android:id="@+id/menuClearHistoryButton"
         android:onClick="clearHistory"
         android:title="@string/app_menu_clear_history" />
 
     <item
-        android:id="@+id/menuSettingsButton"
         android:onClick="openSettings"
         android:title="@string/app_menu_settings" />
 
     <item
-        android:id="@+id/menuAboutButton"
         android:onClick="openAbout"
         android:title="@string/app_menu_about" />
 </menu>

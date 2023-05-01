@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="syntax_error">Синтаксна грешка</string>
-    <string name="select_theme_title">Изабери тему</string>
-    <string name="app_menu_vibration">Вибрација</string>
     <string name="app_menu_clear_history">Обриши историју</string>
     <string name="app_menu_about">О апликацији</string>
     <string name="app_menu_theme">Тема</string>

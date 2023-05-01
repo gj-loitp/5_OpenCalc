@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_menu_vibration">Vibracije</string>
     <string name="app_menu_theme">Tema</string>
     <string name="app_name_display">Kalkulator</string>
     <string name="theme_dark">Tamna</string>
-    <string name="select_theme_title">Odaberi temu</string>
     <string name="app_menu_clear_history">Obriši historiju</string>
     <string name="app_menu_about">O aplikaciji</string>
     <string name="theme_amoled">Crna</string>

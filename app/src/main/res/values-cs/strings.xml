@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="preferences_vibration_title">Vibrace</string>
-    <string name="app_menu_vibration">Vibrace</string>
     <string name="app_menu_theme">Motiv</string>
     <string name="app_name_display">Kalkulačka</string>
-    <string name="select_theme_title">Vybrat motiv</string>
     <string name="app_menu_clear_history">Vymazat historii</string>
     <string name="app_menu_about">O aplikaci</string>
     <string name="theme_amoled">Amoled</string>
@@ -26,16 +24,12 @@
     <string name="preferences_radians_instead_of_degrees_by_default_title">Radiány</string>
     <string name="preferences_radians_instead_of_degrees_by_default_summary">Používat radiány místo stupňů</string>
     <string name="about_help_us_category">POMOZTE NÁM</string>
-    <string name="about_donate">Přispět</string>
-    <string name="about_social_category">SOCIÁLNÍ</string>
     <string name="domain_error">Domain error</string>
     <string name="math_error">Math error</string>
     <string name="syntax_error">Syntax error</string>
     <string name="about_other_category">OSTATNÍ</string>
-    <string name="about_translate">Překlad</string>
     <string name="about_rate">Ohodnotit aplikaci</string>
     <string name="thanks_for_using_opencalc">Děkujeme za používání OpenCalc ❤️</string>
-    <string name="made_in_france">Vytvořeno s ❤️ ve Francii</string>
     <string name="preferences_number_precision">Počet desetinných míst</string>
     <string name="privacy_policy">Zásady ochrany soukromí</string>
     <string name="about_title">O aplikaci</string>

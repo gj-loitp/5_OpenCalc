@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">計算機</string>
-    <string name="select_theme_title">選擇主題</string>
     <!-- App Menu -->
     <string name="app_menu_theme">主題</string>
-    <string name="app_menu_vibration">震動</string>
     <string name="app_menu_clear_history">清除計算記錄</string>
     <string name="app_menu_about">關於</string>
     <!-- Theme choices -->
@@ -39,14 +37,10 @@
     <string name="preferences_radians_instead_of_degrees_by_default_title">弧度</string>
     <string name="preferences_radians_instead_of_degrees_by_default_summary">預設使用弧度代替度數</string>
     <string name="about_help_us_category">幫助我們</string>
-    <string name="about_donate">贊助</string>
-    <string name="about_social_category">聯係我們</string>
     <string name="about_other_category">其他</string>
-    <string name="about_translate">翻譯</string>
     <string name="about_rate">爲此APP評分</string>
     <string name="app_version_title">版本</string>
     <string name="thanks_for_using_opencalc">感謝使用 OpenCalc ❤️</string>
-    <string name="made_in_france">在法國用 ❤️ 製造</string>
     <string name="preferences_number_precision">小數位準確性</string>
     <string name="privacy_policy">隱私政策</string>
     <string name="about_title">關於</string>

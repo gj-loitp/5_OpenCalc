@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_menu_theme">Тема</string>
-    <string name="app_menu_vibration">Вібрація</string>
     <string name="app_menu_clear_history">Очистити історію</string>
     <string name="app_menu_about">Про застосунок</string>
     <string name="theme_system">Система</string>
     <string name="theme_amoled">Амолед</string>
     <string name="app_name_display">Калькулятор</string>
-    <string name="select_theme_title">Виберіть тему</string>
     <string name="infinity">Нескінченність</string>
     <string name="math_error">Математична помилка</string>
     <string name="theme_dark">Темна</string>
@@ -26,14 +24,10 @@
     <string name="preferences_scientif_mode_enabled_by_default_title">Науковий режим</string>
     <string name="preferences_radians_instead_of_degrees_by_default_title">Радіани</string>
     <string name="preferences_radians_instead_of_degrees_by_default_summary">Використовувати радіани замість градусів за замовчуванням</string>
-    <string name="about_donate">Пожертвувати</string>
-    <string name="about_social_category">СОЦІАЛЬНЕ</string>
     <string name="about_other_category">ІНШЕ</string>
-    <string name="about_translate">Перекласти</string>
     <string name="about_rate">Оцінити застосунок</string>
     <string name="app_version_title">Версія</string>
     <string name="thanks_for_using_opencalc">Дякуємо за використання OpenCalc ❤️</string>
-    <string name="made_in_france">Зроблено з ❤️ у Франції</string>
     <string name="privacy_policy">Політика конфіденційності</string>
     <string name="preferences_vibration_summary">Видавати вібрацію при натисканні кнопки</string>
     <string name="preferences_history_size">Результати зберігаються в історії</string>

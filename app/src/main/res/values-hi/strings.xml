@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">कैलकुलेटर</string>
-    <string name="select_theme_title">थीम चयन</string>
     <string name="app_menu_theme">थीम</string>
-    <string name="app_menu_vibration">वाइब्रेशन</string>
     <string name="app_menu_about">ऐप के बारे में</string>
     <string name="infinity">अनंत</string>
     <string name="preferences_general_category">आम</string>
@@ -18,13 +16,9 @@
     <string name="preferences_radians_instead_of_degrees_by_default_title">रेडियन</string>
     <string name="preferences_radians_instead_of_degrees_by_default_summary">डिफ़ॉल्ट रूप से डिग्री के बजाय रेडियन का प्रयोग करें</string>
     <string name="about_help_us_category">हमारे मदद करें</string>
-    <string name="about_social_category">सामाजिक</string>
-    <string name="about_translate">अनुवाद</string>
-    <string name="about_donate">दान देना</string>
     <string name="about_other_category">अन्य</string>
     <string name="app_version_title">संस्करण</string>
     <string name="thanks_for_using_opencalc">OpenCalc का उपयोग करने के लिए धन्यवाद ❤️</string>
-    <string name="made_in_france">फ्रांस में ❤️ से बनाया गया</string>
     <string name="about_title">के बारे में</string>
     <string name="privacy_policy">तख़लिया नीति</string>
     <string name="preferences_number_precision">दशमलव स्थानों की संख्या</string>

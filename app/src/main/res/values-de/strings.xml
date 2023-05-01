@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_display">Rechner</string>
-    <string name="select_theme_title">Design wählen</string>
     <!-- App Menu -->
     <string name="app_menu_theme">Design</string>
-    <string name="app_menu_vibration">Vibration</string>
     <string name="app_menu_about">Über</string>
     <string name="infinity">Unendlich</string>a
     <string name="theme_light">Hell</string>
@@ -32,17 +30,13 @@
     <string name="preferences_radians_instead_of_degrees_by_default_title">Radiant</string>
     <string name="preferences_radians_instead_of_degrees_by_default_summary">Radiant (RAD) statt Grad (DEG) standardmäßig verwenden</string>
     <string name="about_help_us_category">UNTERSTÜTZE UNS</string>
-    <string name="about_donate">Spenden</string>
-    <string name="about_translate">Übersetzen</string>
     <string name="about_rate">App bewerten</string>
     <string name="app_version_title">Version</string>
     <string name="thanks_for_using_opencalc">Danke, dass du OpenCalc nutzt ❤️</string>
-    <string name="made_in_france">Made with ❤️ in France</string>
     <string name="about_other_category">SONSTIGES</string>
     <string name="about_title">Über</string>
     <string name="preferences_number_precision">Anzahl Nachkommastellen</string>
     <string name="privacy_policy">Datenschutzerklärung</string>
     <string name="preferences_language_title">Sprache</string>
-    <string name="about_social_category">SOCIAL</string>
     <string name="domain_error">Falscher Definitionsbereich</string>
 </resources>

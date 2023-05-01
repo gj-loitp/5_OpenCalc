@@ -2,8 +2,6 @@
     <string name="app_name" translatable="false">OpenCalc</string>
     <string name="app_name_display">Calculator</string>
 
-    <string name="select_theme_title">Select Theme</string>
-
     <string name="zero" translatable="false">0</string>
     <string name="one" translatable="false">1</string>
     <string name="two" translatable="false">2</string>
@@ -16,14 +14,6 @@
     <string name="nine" translatable="false">9</string>
 
     <string name="clear" translatable="false">AC</string>
-    <string name="parentheses" translatable="false">(  )</string>
-    <string name="add" translatable="false">+</string>
-    <string name="subtract" translatable="false">−</string>
-    <string name="point" translatable="false">.</string>
-    <string name="equals" translatable="false">=</string>
-    <string name="divide" translatable="false">÷</string>
-    <string name="multiply" translatable="false">×</string>
-    <string name="exponent" translatable="false">^</string>
     <string name="backspace" translatable="false"> </string>
 
     <string name="divideBy100" translatable="false">%</string>
@@ -49,9 +39,7 @@
 
     <!-- App Menu -->
     <string name="app_menu_theme">Theme</string>
-    <string name="app_menu_vibration">Vibration</string>
     <string name="app_menu_clear_history">Clear History</string>
-    <string name="app_menu_github" translatable="false">GitHub</string>
     <string name="app_menu_about">About</string>
 
     <!-- Theme choices -->
@@ -91,17 +79,11 @@
     <string name="preferences_radians_instead_of_degrees_by_default_title">Radians</string>
     <string name="preferences_radians_instead_of_degrees_by_default_summary">Use radians instead of degrees by default</string>
     <string name="about_help_us_category">HELP US</string>
-    <string name="about_donate">Donate</string>
-    <string name="about_discord" translatable="false">Discord</string>
-    <string name="about_github" translatable="false">GitHub</string>
-    <string name="about_social_category">SOCIAL</string>
     <string name="app_version" translatable="false">APP VERSION</string>
     <string name="about_other_category">OTHER</string>
-    <string name="about_translate">Translate</string>
     <string name="about_rate">Rate this app</string>
     <string name="app_version_title">Version</string>
     <string name="thanks_for_using_opencalc">Thanks for using OpenCalc ❤️</string>
-    <string name="made_in_france">Made with ❤️ in France</string>
     <string name="preferences_number_precision">Number of decimal places</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="about_title">About</string>

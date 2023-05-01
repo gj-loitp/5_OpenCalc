@@ -7,7 +7,6 @@
         <!--app:iconSpaceReserved="false"-->
 
         <Preference
-            android:id="@+id/settings_select_app_language"
             app:enabled="true"
             app:icon="@drawable/language"
             app:key="darkempire78.opencalculator.APP_LANGUAGE"
