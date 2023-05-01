@@ -90,4 +90,6 @@
     <string name="preferences_language_title">Language</string>
     <string name="deg">DEG</string>
     <string name="_45">45</string>
+    <string name="get_more_apps">Get more apps</string>
+    <string name="share_this_app">Share this app</string>
 </resources>

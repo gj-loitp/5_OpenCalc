@@ -8,8 +8,10 @@ import com.roy.BuildConfig
 import com.roy.R
 import com.roy.databinding.ActivityAboutBinding
 import com.roy.db.MyPreferences
+import com.roy.ext.moreApp
 import com.roy.ext.openBrowserPolicy
 import com.roy.ext.rateApp
+import com.roy.ext.shareApp
 import com.roy.model.Themes
 
 class AboutActivity : AppCompatActivity() {
@@ -49,8 +51,14 @@ class AboutActivity : AppCompatActivity() {
         }
 
         // Rate
-        binding.aboutRate.setOnClickListener {
+        binding.tvAboutRate.setOnClickListener {
             rateApp(packageName)
+        }
+        binding.tvAboutMoreApp.setOnClickListener {
+            moreApp()
+        }
+        binding.tvAboutShareApp.setOnClickListener {
+            shareApp()
         }
 
         binding.tvAboutPrivacyPolicy.setOnClickListener {
