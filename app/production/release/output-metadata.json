@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.roy93group.opencalculator",
+  "variantName": "productionRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 20230501,
+      "versionName": "2023.05.01",
+      "outputFile": "com.roy93group.opencalculatorrelease_2023.05.01_20230501.apk"
+    }
+  ],
+  "elementType": "File"
+}
