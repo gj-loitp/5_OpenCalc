@@ -23,6 +23,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
 import com.roy.adt.HistoryAdapter
+import com.roy.db.MyPreferences
 import com.roy.ext.Calculator
 import com.roy.ext.division_by_0
 import com.roy.ext.domain_error

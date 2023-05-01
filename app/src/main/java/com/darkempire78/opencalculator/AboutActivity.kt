@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.darkempire78.opencalculator.databinding.ActivityAboutBinding
+import com.roy.db.MyPreferences
 
 class AboutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAboutBinding
