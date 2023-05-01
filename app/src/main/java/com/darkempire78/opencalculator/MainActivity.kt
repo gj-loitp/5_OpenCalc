@@ -29,6 +29,7 @@ import com.roy.ext.division_by_0
 import com.roy.ext.domain_error
 import com.roy.ext.syntax_error
 import com.roy.helper.Expression
+import com.roy.helper.NumberFormatter
 import com.roy.model.History
 import com.roy.model.Themes
 import com.sothree.slidinguppanel.PanelSlideListener

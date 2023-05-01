@@ -1,10 +1,13 @@
-package com.darkempire78.opencalculator
+package com.roy.helper
 
 import java.text.DecimalFormat
-import java.text.DecimalFormatSymbols
 
 object NumberFormatter {
-    fun format(text: String, decimalSeparatorSymbol : String, groupingSeparatorSymbol : String): String {
+    fun format(
+        text: String,
+        decimalSeparatorSymbol: String,
+        groupingSeparatorSymbol: String
+    ): String {
         val textNoSeparator = removeSeparators(text, groupingSeparatorSymbol)
         val numbersList = extractNumbers(textNoSeparator, decimalSeparatorSymbol)
         val numbersWithSeparators = addSeparators(numbersList, decimalSeparatorSymbol)
@@ -15,14 +18,21 @@ object NumberFormatter {
         return textWithSeparators
     }
 
-    fun extractNumbers(text: String, decimalSeparatorSymbol : String): List<String> {
-        val numberRegex = "(\\d+\\$decimalSeparatorSymbol\\d+)|(\\d+\\$decimalSeparatorSymbol)|(\\$decimalSeparatorSymbol\\d+)|(\\$decimalSeparatorSymbol)|(\\d+)".toRegex()
+    fun extractNumbers(
+        text: String,
+        decimalSeparatorSymbol: String
+    ): List<String> {
+        val numberRegex =
+            "(\\d+\\$decimalSeparatorSymbol\\d+)|(\\d+\\$decimalSeparatorSymbol)|(\\$decimalSeparatorSymbol\\d+)|(\\$decimalSeparatorSymbol)|(\\d+)".toRegex()
 
         val results = numberRegex.findAll(text)
         return results.map { it.value }.toList()
     }
 
-    private fun addSeparators(numbersList: List<String>, decimalSeparatorSymbol : String): List<String> {
+    private fun addSeparators(
+        numbersList: List<String>,
+        decimalSeparatorSymbol: String
+    ): List<String> {
         return numbersList.map {
             if (it.contains(decimalSeparatorSymbol)) {
                 if (it.first() == decimalSeparatorSymbol[0]) {
@@ -39,7 +49,10 @@ object NumberFormatter {
         }
     }
 
-    private fun removeSeparators(text: String, groupingSeparatorSymbol: String): String {
+    private fun removeSeparators(
+        text: String,
+        groupingSeparatorSymbol: String
+    ): String {
         return text.replace(groupingSeparatorSymbol, "")
     }
 }
