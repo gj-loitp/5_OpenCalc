@@ -22,7 +22,7 @@
             style="@style/RobotoFontCondensedMedium"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:autofillHints="false"
             android:background="?attr/foreground_color"
             android:inputType="textNoSuggestions"
@@ -31,7 +31,7 @@
             android:textAlignment="textEnd"
             android:textColor="?attr/text_color"
             android:textSize="95sp"
-            tools:ignore="RtlCompat,SpeakableTextPresentCheck" />
+            tools:ignore="LabelFor,RtlCompat,SpeakableTextPresentCheck" />
 
     </HorizontalScrollView>
 
@@ -41,6 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:autofillHints=""
         android:background="?attr/foreground_color"
         android:clickable="false"
         android:cursorVisible="false"
@@ -50,13 +51,13 @@
         android:paddingBottom="4dp"
         android:scrollHorizontally="true"
         android:singleLine="true"
-        android:text="45"
+        android:text="@string/_45"
         android:textAlignment="textEnd"
         android:textColor="?attr/text_second_color"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline1"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
         android:id="@+id/slidingLayout"
@@ -100,7 +101,8 @@
                         android:layout_weight="1"
                         android:onClick="squareButton"
                         android:text="@string/square"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/piButton"
@@ -111,7 +113,8 @@
                         android:layout_weight="1"
                         android:onClick="piButton"
                         android:text="@string/pi"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/divideBy100Button"
@@ -122,7 +125,8 @@
                         android:layout_weight="1"
                         android:onClick="divideBy100"
                         android:text="@string/divideBy100"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/factorialButton"
@@ -132,7 +136,8 @@
                         android:layout_margin="0dp"
                         android:layout_weight="1"
                         android:onClick="factorialButton"
-                        android:text="@string/factorial" />
+                        android:text="@string/factorial"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
                         android:id="@+id/scientistModeSwitchButton"
@@ -143,13 +148,14 @@
                         android:layout_weight="0.6"
                         android:background="@drawable/circle"
                         android:backgroundTint="?attr/foreground_color"
+                        android:contentDescription="@string/app_name"
                         android:fontFamily="@style/RobotoFontCondensedLight"
                         android:onClick="scientistModeSwitchButton"
                         android:textAllCaps="false"
                         android:textColor="?attr/text_color"
                         android:textSize="50sp"
                         app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
-                        tools:ignore="SpeakableTextPresentCheck" />
+                        tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
 
                 </TableRow>
 
@@ -170,7 +176,8 @@
                         android:layout_weight="1"
                         android:onClick="degreeButton"
                         android:text="@string/degree"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/sineButton"
@@ -181,7 +188,8 @@
                         android:layout_weight="1"
                         android:onClick="sineButton"
                         android:text="@string/sine"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/cosineButton"
@@ -192,7 +200,8 @@
                         android:layout_weight="1"
                         android:onClick="cosineButton"
                         android:text="@string/cosine"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/tangentButton"
@@ -203,7 +212,8 @@
                         android:layout_weight="1"
                         android:onClick="tangentButton"
                         android:text="@string/tangent"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Space
                         android:id="@+id/emptyScientistMode1"
@@ -231,7 +241,8 @@
                         android:layout_weight="1"
                         android:onClick="invButton"
                         android:text="@string/inv"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/eButton"
@@ -242,7 +253,8 @@
                         android:layout_weight="1"
                         android:onClick="eButton"
                         android:text="@string/e"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/naturalLogarithmButton"
@@ -253,7 +265,8 @@
                         android:layout_weight="1"
                         android:onClick="naturalLogarithmButton"
                         android:text="@string/naturalLogarithm"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/logarithmButton"
@@ -264,7 +277,8 @@
                         android:layout_weight="1"
                         android:onClick="logarithmButton"
                         android:text="@string/logarithm"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Space
                         android:id="@+id/emptyScientistMode2"
@@ -291,7 +305,8 @@
                         android:backgroundTint="?attr/button_clear_color"
                         android:onClick="clearButton"
                         android:text="@string/clear"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
                         android:id="@+id/parenthesesButton"
@@ -300,8 +315,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
+                        android:contentDescription="@string/app_name"
                         android:onClick="parenthesesButton"
-                        app:srcCompat="@drawable/parentheses" />
+                        app:srcCompat="@drawable/parentheses"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
                         android:id="@+id/exponentButton"
@@ -310,8 +327,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
+                        android:contentDescription="@string/app_name"
                         android:onClick="exponentButton"
-                        app:srcCompat="@drawable/exponent" />
+                        app:srcCompat="@drawable/exponent"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
                         android:id="@+id/divideButton"
@@ -320,8 +339,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
+                        android:contentDescription="@string/app_name"
                         android:onClick="divideButton"
-                        app:srcCompat="@drawable/divide" />
+                        app:srcCompat="@drawable/divide"
+                        tools:ignore="UsingOnClickInXml" />
                 </TableRow>
 
                 <TableRow
@@ -337,7 +358,8 @@
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/seven"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/eightButton"
@@ -347,7 +369,8 @@
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/eight"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/nineButton"
@@ -357,7 +380,8 @@
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/nine"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
                         android:id="@+id/multiplyButton"
@@ -366,8 +390,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
+                        android:contentDescription="@string/app_name"
                         android:onClick="multiplyButton"
-                        app:srcCompat="@drawable/multiply" />
+                        app:srcCompat="@drawable/multiply"
+                        tools:ignore="UsingOnClickInXml" />
                 </TableRow>
 
                 <TableRow
@@ -383,7 +409,8 @@
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/four"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/fiveButton"
@@ -393,7 +420,8 @@
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/five"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/sixButton"
@@ -404,7 +432,8 @@
                         android:background="@drawable/circle"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/six"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
                         android:id="@+id/subtractButton"
@@ -413,8 +442,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
+                        android:contentDescription="@string/app_name"
                         android:onClick="subtractButton"
-                        app:srcCompat="@drawable/subtract" />
+                        app:srcCompat="@drawable/subtract"
+                        tools:ignore="UsingOnClickInXml" />
                 </TableRow>
 
                 <TableRow
@@ -430,7 +461,8 @@
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/one"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/twoButton"
@@ -440,7 +472,8 @@
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/two"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <Button
                         android:id="@+id/threeButton"
@@ -450,7 +483,8 @@
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/three"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
                         android:id="@+id/addButton"
@@ -459,9 +493,11 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_symbol_color"
+                        android:contentDescription="@string/app_name"
                         android:onClick="addButton"
                         android:textSize="@dimen/button_text_size"
-                        app:srcCompat="@drawable/add" />
+                        app:srcCompat="@drawable/add"
+                        tools:ignore="UsingOnClickInXml" />
                 </TableRow>
 
                 <TableRow
@@ -477,7 +513,8 @@
                         android:layout_weight="1"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/zero"
-                        android:textSize="@dimen/button_text_size" />
+                        android:textSize="@dimen/button_text_size"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
                         android:id="@+id/pointButton"
@@ -485,9 +522,11 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:contentDescription="@string/app_name"
                         android:onClick="pointButton"
                         android:textSize="@dimen/button_text_size"
-                        app:srcCompat="@drawable/dot" />
+                        app:srcCompat="@drawable/dot"
+                        tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
                         android:id="@+id/backspaceButton"
@@ -498,7 +537,7 @@
                         android:contentDescription="@string/backspace"
                         android:onClick="backspaceButton"
                         app:srcCompat="@drawable/backspace_720dp"
-                        tools:ignore="SpeakableTextPresentCheck" />
+                        tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
 
                     <ImageButton
                         android:id="@+id/equalsButton"
@@ -507,8 +546,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:backgroundTint="?attr/button_equals_color"
+                        android:contentDescription="@string/app_name"
                         android:onClick="equalsButton"
-                        app:srcCompat="@drawable/equals" />
+                        app:srcCompat="@drawable/equals"
+                        tools:ignore="UsingOnClickInXml" />
                 </TableRow>
             </TableLayout>
 
@@ -579,6 +620,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@drawable/ic_baseline_more_vert_24"
+        android:contentDescription="@string/app_name"
         android:fontFamily="@style/RobotoFontCondensedLight"
         android:minWidth="48dp"
         android:minHeight="48dp"
@@ -586,7 +628,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_more_vert_24"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
 
     <TextView
         android:id="@+id/degreeTextView"
