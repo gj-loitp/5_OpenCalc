@@ -26,6 +26,7 @@ import com.roy.ext.Calculator
 import com.roy.ext.division_by_0
 import com.roy.ext.domain_error
 import com.roy.ext.syntax_error
+import com.roy.helper.Expression
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
