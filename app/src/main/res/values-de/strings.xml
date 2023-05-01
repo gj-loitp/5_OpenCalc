@@ -7,7 +7,7 @@
     <string name="app_menu_vibration">Vibration</string>
     <string name="app_menu_about">Über</string>
     <string name="infinity">Unendlich</string>a
-<string name="theme_light">Hell</string>
+    <string name="theme_light">Hell</string>
     <string name="value_copied">Kopiert</string>
     <string name="math_error">Mathematischer Fehler</string>
     <string name="app_menu_clear_history">Verlauf löschen</string>
