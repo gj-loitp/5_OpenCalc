@@ -452,6 +452,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun enableOrDisableDegreeMode() {
         if (binding.degreeButton.text.toString() == "DEG") {
             binding.degreeButton.text = "RAD"
