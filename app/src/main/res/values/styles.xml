@@ -104,7 +104,9 @@
 
     <style name="ThemeOverlay.App.Switch.Light_Material" parent="">
         <item name="colorPrimary">@color/material_dynamic_primary80</item> <!-- Switch On Color -->
-        <item name="colorSurfaceVariant">@color/switch_surface_variant_color</item><!-- Switch Off Color -->-->
+        <item name="colorSurfaceVariant">@color/switch_surface_variant_color
+        </item><!-- Switch Off Color -->
+        -->
         <item name="colorOnPrimary">@color/switch_on_primary_color</item>
         <item name="colorOutline">@color/switch_on_primary_color</item>
     </style>
@@ -115,7 +117,9 @@
 
     <style name="ThemeOverlay.App.Switch" parent="">
         <item name="colorPrimary">@color/switch_primary_color</item>--> <!-- Switch On Color -->
-        <item name="colorSurfaceVariant">@color/switch_surface_variant_color</item><!-- Switch Off Color -->-->
+        <item name="colorSurfaceVariant">@color/switch_surface_variant_color
+        </item><!-- Switch Off Color -->
+        -->
         <item name="colorOnPrimary">@color/switch_on_primary_color</item>
         <item name="colorOutline">@color/switch_on_primary_color</item>
     </style>
@@ -133,8 +137,12 @@
         <item name="android:background">@drawable/circle</item>
         <item name="android:textColor">?attr/text_color</item>
         <item name="android:textSize">@dimen/calculator_button_text_size</item>
-        <item name="android:layout_marginHorizontal" tools:targetApi="o">@dimen/button_horizontal_margin</item>
-        <item name="android:layout_marginVertical" tools:targetApi="o">@dimen/button_vertical_margin</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="o">
+            @dimen/button_horizontal_margin
+        </item>
+        <item name="android:layout_marginVertical" tools:targetApi="o">
+            @dimen/button_vertical_margin
+        </item>
         <item name="android:includeFontPadding">false</item>
         <!-- cancel out material3 -->
         <item name="backgroundTint">@null</item>
@@ -159,7 +167,5 @@
     <style name="Widget.Material3.PopupMenu" parent="Widget.MaterialComponents.PopupMenu">
         <item name="android:popupBackground">@drawable/rounded</item>
     </style>
-
-
 
 </resources>

@@ -34,7 +34,9 @@
 
     <style name="ThemeOverlay.App.Switch.Dark" parent="">
         <item name="colorPrimary">@color/material_dynamic_primary60</item> <!-- Switch On Color -->
-        <item name="colorSurfaceVariant">@color/switch_surface_variant_color</item><!-- Switch Off Color -->-->
+        <item name="colorSurfaceVariant">@color/switch_surface_variant_color
+        </item><!-- Switch Off Color -->
+        -->
         <item name="colorOnPrimary">@color/switch_on_primary_color</item>
         <item name="colorOutline">@color/switch_on_primary_color</item>
     </style>
