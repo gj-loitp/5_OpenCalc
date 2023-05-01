@@ -60,14 +60,14 @@
         tools:ignore="Autofill,LabelFor" />
 
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
-        android:id="@+id/sliding_layout"
+        android:id="@+id/slidingLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="top"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultDisplay"
         app:umanoPanelHeight="41dp"
-        app:umanoScrollableView="@id/history_recylcle_view"
+        app:umanoScrollableView="@id/rvHistory"
         app:umanoShadowHeight="0dp"
         tools:ignore="MissingConstraints">
 
@@ -544,18 +544,18 @@
             tools:context=".MainActivity">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/history_recylcle_view"
+                android:id="@+id/rvHistory"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="32dp"
                 android:background="?attr/history_background_color"
-                app:layout_constraintBottom_toTopOf="@+id/sliding_layout_button"
+                app:layout_constraintBottom_toTopOf="@+id/slidingLayoutButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <View
-                android:id="@+id/sliding_layout_button"
+                android:id="@+id/slidingLayoutButton"
                 android:layout_width="30dp"
                 android:layout_height="4dp"
                 android:layout_marginTop="24dp"

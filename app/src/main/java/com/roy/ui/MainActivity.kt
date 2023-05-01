@@ -98,26 +98,26 @@ class MainActivity : AppCompatActivity() {
             LinearLayoutManager.VERTICAL,
             false
         )
-        binding.historyRecylcleView.layoutManager = historyLayoutMgr
+        binding.rvHistory.layoutManager = historyLayoutMgr
         historyAdapter = HistoryAdapter(mutableListOf()) { value ->
             run {
                 //val valueUpdated = value.replace(".", NumberFormatter.decimalSeparatorSymbol)
                 updateDisplay(window.decorView, value)
             }
         }
-        binding.historyRecylcleView.adapter = historyAdapter
+        binding.rvHistory.adapter = historyAdapter
         // Set values
         val historyList = MyPreferences(this).getHistory()
         historyAdapter.appendHistory(historyList)
         // Scroll to the bottom of the recycle view
         if (historyAdapter.itemCount > 0) {
-            binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
+            binding.rvHistory.scrollToPosition(historyAdapter.itemCount - 1)
         }
 
         binding.slidingLayout.addPanelSlideListener(object : PanelSlideListener {
             override fun onPanelSlide(panel: View, slideOffset: Float) {
                 if (slideOffset == 0f) { // If the panel got collapsed
-                    binding.slidingLayout.scrollableView = binding.historyRecylcleView
+                    binding.slidingLayout.scrollableView = binding.rvHistory
                 }
             }
 
@@ -841,7 +841,7 @@ class MainActivity : AppCompatActivity() {
                                 }
 
                                 // Scroll to the bottom of the recycle view
-                                binding.historyRecylcleView.scrollToPosition(historyAdapter.itemCount - 1)
+                                binding.rvHistory.scrollToPosition(historyAdapter.itemCount - 1)
                             }
                         }
                     }

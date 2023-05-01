@@ -8,7 +8,7 @@
     android:animateLayoutChanges="true">
 
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
-        android:id="@+id/sliding_layout"
+        android:id="@+id/slidingLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="top"
@@ -376,7 +376,7 @@
             android:background="@drawable/display_background">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/history_recylcle_view"
+                android:id="@+id/rvHistory"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="15dp"
@@ -384,10 +384,10 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/sliding_layout_button"/>
+                app:layout_constraintBottom_toTopOf="@+id/slidingLayoutButton"/>
 
             <View
-                android:id="@+id/sliding_layout_button"
+                android:id="@+id/slidingLayoutButton"
                 android:layout_width="30dp"
                 android:layout_height="4dp"
                 android:layout_marginBottom="12dp"
