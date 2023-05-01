@@ -1,4 +1,4 @@
-package com.darkempire78.opencalculator
+package com.roy.ui
 
 import android.animation.LayoutTransition
 import android.annotation.SuppressLint
@@ -21,6 +21,7 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.darkempire78.opencalculator.R
 import com.darkempire78.opencalculator.databinding.ActivityMainBinding
 import com.roy.adt.HistoryAdapter
 import com.roy.db.MyPreferences
@@ -32,8 +33,6 @@ import com.roy.helper.Expression
 import com.roy.helper.NumberFormatter
 import com.roy.model.History
 import com.roy.model.Themes
-import com.roy.ui.AboutActivity
-import com.roy.ui.SettingsActivity
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers

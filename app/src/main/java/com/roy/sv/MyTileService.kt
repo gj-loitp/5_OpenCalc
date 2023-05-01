@@ -5,7 +5,7 @@ import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.os.Build
 import android.service.quicksettings.TileService
 import androidx.annotation.RequiresApi
-import com.darkempire78.opencalculator.MainActivity
+import com.roy.ui.MainActivity
 
 @RequiresApi(Build.VERSION_CODES.N)
 class MyTileService : TileService() {
