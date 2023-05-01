@@ -32,7 +32,7 @@
         </activity>
 
         <service
-            android:name=".MyTileService"
+            android:name="com.roy.sv.MyTileService"
             android:exported="true"
             android:icon="@drawable/ic_launcher_foreground_tile"
             android:label="@string/app_name_display"
