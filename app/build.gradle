@@ -5,12 +5,12 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "com.darkempire78.opencalculator"
+        applicationId "com.roy93group.opencalculator"
         resConfigs 'ar', 'az', 'bn', 'bs', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hr', 'in', 'it', 'ja', 'mk', 'nb-rNO', 'pt-rBR', 'ru', 'tr', 'uk', 'vi', 'zh-rHK', 'zh-rTW'
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 38
-        versionName "2.3.1"
+        versionCode 20230501
+        versionName "2023.05.01"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,20 +36,31 @@ android {
         viewBinding = true
     }
     namespace 'com.darkempire78.opencalculator'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = 11
+    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.preference:preference-ktx:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.android.material:material:1.8.0'
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
-    implementation 'com.github.hannesa2:AndroidSlidingUpPanel:4.4.1'
-    implementation 'androidx.preference:preference:1.2.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+    implementation 'com.github.hannesa2:AndroidSlidingUpPanel:4.5.0'
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    //for testing
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    implementation 'com.google.code.gson:gson:2.9.1'
 }

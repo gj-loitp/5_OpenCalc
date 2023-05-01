@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode
 //TODO firebase
 //TODO ad
 //TODO leak canary
+//TODO keystore
+//TODO permission ad id
 
 //https://github.com/tplloi/OpenCalc/tree/dev
 class OpenCalcApp : Application() {
