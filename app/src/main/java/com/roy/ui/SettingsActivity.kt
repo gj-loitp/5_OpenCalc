@@ -47,7 +47,7 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         // back button
-        findViewById<ImageView>(R.id.settings_back_button).setOnClickListener {
+        findViewById<ImageView>(R.id.ivSettingsBack).setOnClickListener {
             finish()
         }
     }
