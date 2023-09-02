@@ -2,15 +2,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.roy93group.opencalculator"
         resourceConfigurations += ['ar', 'az', 'bn', 'bs', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hr', 'in', 'it', 'ja', 'mk', 'nb-rNO', 'pt-rBR', 'ru', 'tr', 'uk', 'vi', 'zh-rHK', 'zh-rTW']
         minSdkVersion 21
-        targetSdkVersion 33
-        versionCode 20230501
-        versionName "2023.05.01"
+        targetSdkVersion 34
+        versionCode 20230902
+        versionName "2023.09.02"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -60,35 +60,35 @@ android {
         jvmTarget = 11
     }
 
-    android.applicationVariants.all { variant ->
-        variant.outputs.all {
+    android.applicationVariants.configureEach { variant ->
+        variant.outputs.configureEach {
             outputFileName = defaultConfig.applicationId + buildType.name + "_" + defaultConfig.versionName + "_" + defaultConfig.versionCode + ".apk"
         }
     }
 
-    flavorDimensions "type"
+    flavorDimensions.add("type")
     productFlavors {
 
         dev {
-//            applicationId = "com.roygroup.base.dev"
+//            applicationId = "com.roy93group.opencalculator.dev"
             dimension "type"
             buildConfigField("String", "FLAVOR_buildEnv", '"dev"')
 //            resValue "string", "app_name", "Base DEV"
 
 //            resValue("string", "SDK_KEY", "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt")
-//            resValue "string", "BANNER", "18a3d1924d3ebee6"
-//            resValue "string", "INTER", "895d5d41cb20edb7"
+//            resValue "string", "BANNER", ""
+//            resValue "string", "INTER", ""
         }
 
         production {
-//            applicationId = "com.roygroup.base.prod"
+//            applicationId = "com.roy93group.opencalculator.prod"
             dimension "type"
             buildConfigField("String", "FLAVOR_buildEnv", '"prod"')
 //            resValue "string", "app_name", "Base"
 
 //            resValue("string", "SDK_KEY", "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt")
-//            resValue "string", "BANNER", "18a3d1924d3ebee6"
-//            resValue "string", "INTER", "895d5d41cb20edb7"
+//            resValue "string", "BANNER", ""
+//            resValue "string", "INTER", ""
         }
 
     }
@@ -96,14 +96,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
     implementation 'com.github.hannesa2:AndroidSlidingUpPanel:4.5.0'
-    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
     implementation 'com.google.code.gson:gson:2.10.1'
 
     //for testing
