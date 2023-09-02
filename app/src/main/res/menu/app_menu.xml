@@ -15,4 +15,8 @@
     <item
         android:onClick="openAbout"
         android:title="@string/app_menu_about" />
+
+    <item
+        android:onClick="openGithub"
+        android:title="@string/github" />
 </menu>

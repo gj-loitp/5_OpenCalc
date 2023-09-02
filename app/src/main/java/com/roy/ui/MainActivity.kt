@@ -21,6 +21,7 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.roy.BuildConfig
 import com.roy.R
 import com.roy.adt.HistoryAdapter
 import com.roy.databinding.ActivityMainBinding
@@ -28,6 +29,7 @@ import com.roy.db.MyPreferences
 import com.roy.ext.Calculator
 import com.roy.ext.division_by_0
 import com.roy.ext.domain_error
+import com.roy.ext.openUrlInBrowser
 import com.roy.ext.syntax_error
 import com.roy.helper.Expression
 import com.roy.helper.NumberFormatter
@@ -251,6 +253,15 @@ class MainActivity : AppCompatActivity() {
     fun openSettings(menuItem: MenuItem) {
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent, null)
+    }
+
+    fun openGithub(menuItem: MenuItem) {
+        if (BuildConfig.DEBUG) {
+            this.openUrlInBrowser("https://github.com/tplloi/OpenCalc/tree/dev")
+        } else {
+            Toast.makeText(this, "This feature is only available in debug mode", Toast.LENGTH_SHORT)
+                .show()
+        }
     }
 
     fun clearHistory(menuItem: MenuItem) {
