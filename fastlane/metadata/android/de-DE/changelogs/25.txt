@@ -1,8 +1,0 @@
-Neu:
-- Spanisch-Übersetzung
-
-Fehlerbehebung:
-- Tastatur reagiert nicht bei Interaktion mit großen Fakultäten
-- Falsches Laden von Werten aus dem Verlauf
-- Laden von Ergebnissen mit Dezimalpunkt aus dem Verlauf enfernt Operatoren oder führt zum App-Absturz
-- Genauigkeit

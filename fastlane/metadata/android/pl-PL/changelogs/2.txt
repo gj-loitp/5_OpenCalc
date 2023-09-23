@@ -1,3 +1,0 @@
-Dodano:
-- Motyw AMOLED
-- Korzystanie z motywu systemowego

@@ -1,6 +1,0 @@
-Dodano:
-- Ikona według motywu
-
-Zmieniono:
-- Zaktualizowano tłumaczenia
-- Wyjście jest czyszczone jeśli liczba jest wciśnięta po znaku równa się

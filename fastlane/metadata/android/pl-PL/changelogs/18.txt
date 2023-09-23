@@ -1,7 +1,0 @@
-Dodano:
-- Przytrzymaj aby skopiować wartość
-- Tłumaczenie indonezyjskie
-
-Naprawiono:
-- Przewijanie w trybie poziomym
-- Problemy z focusem

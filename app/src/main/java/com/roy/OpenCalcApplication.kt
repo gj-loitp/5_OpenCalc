@@ -9,6 +9,8 @@ import com.roy.db.MyPreferences
 
 //TODO firebase
 //TODO ad
+//TODO github
+//TODO license
 
 //done
 //ic_launcher

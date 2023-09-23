@@ -1,2 +1,0 @@
-Naprawiono:
-- Błąd aplikacji przy obsługiwaniu dużych liczb

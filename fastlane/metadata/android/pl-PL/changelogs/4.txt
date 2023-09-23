@@ -1,2 +1,0 @@
-Naprawiono:
-- Dodano wibracje do przycisków, które jej nie miały

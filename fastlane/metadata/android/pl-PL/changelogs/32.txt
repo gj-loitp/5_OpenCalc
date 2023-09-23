@@ -1,2 +1,0 @@
-Naprawiono:
-- Błąd aplikacji na małych ekranach i tabletach

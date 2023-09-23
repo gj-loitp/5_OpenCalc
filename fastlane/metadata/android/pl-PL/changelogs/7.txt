@@ -1,2 +1,0 @@
-Naprawiono:
-- Naprawiono motyw Material You
