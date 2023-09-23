@@ -19,4 +19,12 @@
     <item
         android:onClick="openGithub"
         android:title="@string/github" />
+
+    <item
+        android:onClick="openSourceCode"
+        android:title="@string/source_code" />
+
+    <item
+        android:onClick="openLicense"
+        android:title="@string/license" />
 </menu>

@@ -264,6 +264,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun openSourceCode(menuItem: MenuItem) {
+        this.openUrlInBrowser("https://github.com/Darkempire78/OpenCalc")
+    }
+
+    fun openLicense(menuItem: MenuItem) {
+        this.openUrlInBrowser("https://raw.githubusercontent.com/Darkempire78/OpenCalc/main/LICENSE")
+    }
+
     fun clearHistory(menuItem: MenuItem) {
         // Clear preferences
         MyPreferences(this@MainActivity).saveHistory(this@MainActivity, mutableListOf())
