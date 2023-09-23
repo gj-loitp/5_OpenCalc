@@ -35,7 +35,7 @@
             app:widgetLayout="@drawable/material_switch" />
 
         <SwitchPreferenceCompat
-            app:defaultValue="false"
+            app:defaultValue="true"
             app:icon="@drawable/science"
             app:key="darkempire78.opencalculator.SCIENTIFIC_MODE_ENABLED_BY_DEFAULT"
             app:singleLineTitle="false"
