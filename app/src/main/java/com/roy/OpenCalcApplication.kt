@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode
 import com.roy.db.MyPreferences
 
 //TODO firebase
-//TODO ad
+//TODO applovin
 
 //done
 //ic_launcher
