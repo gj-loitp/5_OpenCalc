@@ -17,6 +17,7 @@ import com.roy.db.MyPreferences
 //TODO keystore
 //TODO github
 //TODO license
+//TODO double tap to exit
 //done
 
 //https://github.com/tplloi/OpenCalc/tree/dev
