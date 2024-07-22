@@ -4,8 +4,9 @@ apply plugin: 'kotlin-android'
 android {
     compileSdk 34
 
+    namespace 'com.mckimquyen'
     defaultConfig {
-        applicationId "com.roy93group.opencalculator"
+        applicationId "com.mckimquyen.opencal"
         resourceConfigurations += ['ar', 'az', 'bn', 'bs', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hr', 'in', 'it', 'ja', 'mk', 'nb-rNO', 'pt-rBR', 'ru', 'tr', 'uk', 'vi', 'zh-rHK', 'zh-rTW']
         minSdkVersion 21
         targetSdkVersion 34
@@ -49,7 +50,6 @@ android {
     buildFeatures {
         viewBinding = true
     }
-    namespace 'com.roy'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17

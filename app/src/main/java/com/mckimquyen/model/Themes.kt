@@ -1,4 +1,4 @@
-package com.roy.model
+package com.mckimquyen.model
 
 import android.app.Activity
 import android.content.Context
@@ -7,8 +7,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import com.google.android.material.color.DynamicColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.roy.R
-import com.roy.db.MyPreferences
+import com.mckimquyen.R
+import com.mckimquyen.db.MyPreferences
 
 class Themes(private val context: Context) {
 

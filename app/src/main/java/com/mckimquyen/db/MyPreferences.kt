@@ -1,10 +1,10 @@
-package com.roy.db
+package com.mckimquyen.db
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.preference.PreferenceManager
 import com.google.gson.Gson
-import com.roy.model.History
+import com.mckimquyen.model.History
 
 class MyPreferences(context: Context) {
 

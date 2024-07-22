@@ -1,13 +1,11 @@
-package com.roy.ext
+package com.mckimquyen.ext
 
-import android.app.*
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
-import android.view.*
 
 const val URL_POLICY_NOTION =
     "https://loitp.notion.site/loitp/Privacy-Policy-319b1cd8783942fa8923d2a3c9bce60f/"

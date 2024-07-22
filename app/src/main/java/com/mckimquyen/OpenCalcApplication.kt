@@ -1,11 +1,11 @@
-package com.roy
+package com.mckimquyen
 
 import android.app.Application
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_UNSPECIFIED
 import androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode
-import com.roy.db.MyPreferences
+import com.mckimquyen.db.MyPreferences
 
 //TODO firebase
 //TODO applovin

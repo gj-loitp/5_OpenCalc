@@ -1,4 +1,4 @@
-package com.roy.ext
+package com.mckimquyen.ext
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -16,7 +16,7 @@ import android.provider.AlarmClock
 import android.provider.CalendarContract
 import android.provider.Telephony
 import android.view.*
-import com.roy.R
+import com.mckimquyen.R
 
 //mo hop thoai de select launcher default
 fun Activity.chooseLauncher(cls: Class<*>) {

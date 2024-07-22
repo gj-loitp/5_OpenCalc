@@ -1,18 +1,18 @@
-package com.roy.ui
+package com.mckimquyen.ui
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.roy.BuildConfig
-import com.roy.R
-import com.roy.databinding.ActivityAboutBinding
-import com.roy.db.MyPreferences
-import com.roy.ext.moreApp
-import com.roy.ext.openBrowserPolicy
-import com.roy.ext.rateApp
-import com.roy.ext.shareApp
-import com.roy.model.Themes
+import com.mckimquyen.BuildConfig
+import com.mckimquyen.R
+import com.mckimquyen.databinding.ActivityAboutBinding
+import com.mckimquyen.db.MyPreferences
+import com.mckimquyen.ext.moreApp
+import com.mckimquyen.ext.openBrowserPolicy
+import com.mckimquyen.ext.rateApp
+import com.mckimquyen.ext.shareApp
+import com.mckimquyen.model.Themes
 
 class AboutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAboutBinding

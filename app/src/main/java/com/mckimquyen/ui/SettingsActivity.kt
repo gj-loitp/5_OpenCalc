@@ -1,4 +1,4 @@
-package com.roy.ui
+package com.mckimquyen.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -11,9 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
-import com.roy.R
-import com.roy.db.MyPreferences
-import com.roy.model.Themes
+import com.mckimquyen.R
+import com.mckimquyen.db.MyPreferences
+import com.mckimquyen.model.Themes
 import java.util.*
 
 class SettingsActivity : AppCompatActivity() {
