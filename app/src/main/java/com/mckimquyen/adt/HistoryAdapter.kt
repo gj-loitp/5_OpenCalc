@@ -60,12 +60,12 @@ class HistoryAdapter(
     }
 
     inner class HistoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val calculation: TextView = itemView.findViewById(R.id.history_item_calculation)
-        private val result: TextView = itemView.findViewById(R.id.history_item_result)
-        private val time: TextView = itemView.findViewById(R.id.history_time)
-        private val separator: View = itemView.findViewById(R.id.history_separator)
+        private val calculation: TextView = itemView.findViewById(R.id.historyItemCalculation)
+        private val result: TextView = itemView.findViewById(R.id.historyItemResult)
+        private val time: TextView = itemView.findViewById(R.id.historyTime)
+        private val separator: View = itemView.findViewById(R.id.historySeparator)
         private val sameDateSeparator: View =
-            itemView.findViewById(R.id.history_same_date_separator)
+            itemView.findViewById(R.id.historySameDateSeparator)
 
         fun bind(historyElement: History, position: Int) {
             // Set calculation, result and time

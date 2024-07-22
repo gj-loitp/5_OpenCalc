@@ -10,7 +10,7 @@
         tools:context=".ui.home.HomeFragment">
 
         <TextView
-            android:id="@+id/history_item_calculation"
+            android:id="@+id/historyItemCalculation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/history_background_color"
@@ -19,11 +19,11 @@
             android:paddingVertical="4dp"
             android:textColor="?attr/text_color"
             android:textSize="75sp"
-            app:layout_constraintTop_toBottomOf="@+id/history_time"
+            app:layout_constraintTop_toBottomOf="@+id/historyTime"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/history_item_result"
+            android:id="@+id/historyItemResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/history_background_color"
@@ -32,11 +32,11 @@
             android:paddingVertical="4dp"
             android:textColor="?attr/text_second_color"
             android:textSize="55sp"
-            app:layout_constraintTop_toBottomOf="@+id/history_item_calculation"
+            app:layout_constraintTop_toBottomOf="@+id/historyItemCalculation"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/history_time"
+            android:id="@+id/historyTime"
             style="@style/RobotoFontCondensedMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,19 +50,19 @@
 
         <!-- Add more space when it's the same date than the next history element -->
         <View
-            android:id="@+id/history_same_date_separator"
+            android:id="@+id/historySameDateSeparator"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:background="?attr/history_background_color"
-            app:layout_constraintTop_toBottomOf="@+id/history_item_result"
+            app:layout_constraintTop_toBottomOf="@+id/historyItemResult"
             tools:ignore="MissingConstraints" />
 
         <View
-            android:id="@+id/history_separator"
+            android:id="@+id/historySeparator"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="?attr/foreground_color"
-            app:layout_constraintTop_toBottomOf="@+id/history_item_result"
+            app:layout_constraintTop_toBottomOf="@+id/historyItemResult"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
