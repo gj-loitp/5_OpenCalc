@@ -1,30 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:onClick="selectThemeDialog"
-        android:title="@string/app_menu_theme" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="AlwaysShowAction">
 
     <item
         android:onClick="clearHistory"
-        android:title="@string/app_menu_clear_history" />
+        android:title="@string/app_menu_clear_history"
+        app:showAsAction="always" />
 
     <item
         android:onClick="openSettings"
-        android:title="@string/app_menu_settings" />
+        android:title="@string/app_menu_settings"
+        app:showAsAction="always" />
+    <item
+        android:onClick="selectThemeDialog"
+        android:title="@string/app_menu_theme"
+        app:showAsAction="ifRoom" />
 
     <item
         android:onClick="openAbout"
-        android:title="@string/app_menu_about" />
+        android:title="@string/app_menu_about"
+        app:showAsAction="ifRoom" />
 
     <item
         android:onClick="openGithub"
-        android:title="@string/github" />
+        android:title="@string/github"
+        app:showAsAction="ifRoom" />
 
     <item
         android:onClick="openSourceCode"
-        android:title="@string/source_code" />
+        android:title="@string/source_code"
+        app:showAsAction="ifRoom" />
 
     <item
         android:onClick="openLicense"
-        android:title="@string/license" />
+        android:title="@string/license"
+        app:showAsAction="ifRoom" />
 </menu>

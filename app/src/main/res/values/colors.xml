@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <color name="calculation_error_color">#F44B3F</color>
-
     <!-- Normal Theme -->
     <color name="foreground_color">#EFEFEF</color>
     <color name="background_color">#fff</color>

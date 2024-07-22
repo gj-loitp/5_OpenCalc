@@ -15,9 +15,10 @@ import com.mckimquyen.db.MyPreferences
 //TODO leak canary
 //TODO permission ad id
 //TODO keystore
-//TODO github
+//TODO github, fork github
 //TODO license
 //TODO double tap to exit
+//TODO join beta
 //done
 
 //https://github.com/tplloi/OpenCalc/tree/dev
