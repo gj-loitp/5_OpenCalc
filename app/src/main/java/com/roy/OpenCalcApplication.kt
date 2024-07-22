@@ -9,16 +9,15 @@ import com.roy.db.MyPreferences
 
 //TODO firebase
 //TODO applovin
-
+//TODO ic_launcher
+//TODO policy
+//TODO rate app, more app, share app
+//TODO leak canary
+//TODO permission ad id
+//TODO keystore
+//TODO github
+//TODO license
 //done
-//ic_launcher
-//policy
-//rate app, more app, share app
-//leak canary
-//permission ad id
-//keystore
-//github
-//license
 
 //https://github.com/tplloi/OpenCalc/tree/dev
 class OpenCalcApplication : Application() {
