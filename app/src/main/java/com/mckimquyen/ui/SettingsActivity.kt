@@ -57,7 +57,7 @@ class SettingsActivity : AppCompatActivity() {
             setPreferencesFromResource(R.xml.root_preferences, rootKey)
 
             val appLanguagePreference =
-                findPreference<Preference>("darkempire78.opencalculator.APP_LANGUAGE")
+                findPreference<Preference>("mckimquyen.opencal.APP_LANGUAGE")
 
             // remove the app language button if you are using an Android version lower than v33 (Android 13)
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
