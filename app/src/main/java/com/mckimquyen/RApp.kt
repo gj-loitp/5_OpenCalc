@@ -22,7 +22,7 @@ import com.mckimquyen.db.MyPreferences
 //done
 
 //https://github.com/tplloi/OpenCalc/tree/dev
-class OpenCalcApplication : Application() {
+class RApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
