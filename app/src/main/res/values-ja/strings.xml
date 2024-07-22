@@ -12,7 +12,7 @@
     <string name="about_other_category">その他</string>
     <string name="about_rate">このアプリを評価する</string>
     <string name="app_version_title">バージョン</string>
-    <string name="thanks_for_using_opencalc">OpenCalc をご利用いただきありがとうございます❤️</string>
+    <string name="thanks_for_using_app">OpenCalc をご利用いただきありがとうございます❤️</string>
     <string name="privacy_policy">個人情報保護方針</string>
     <string name="preferences_scientif_mode_enabled_by_default_summary">デフォルトで科学モードを有効にする</string>
     <string name="preferences_history_size">結果を履歴に残す</string>

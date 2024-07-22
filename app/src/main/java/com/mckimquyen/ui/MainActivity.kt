@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var historyAdapter: HistoryAdapter
     private lateinit var historyLayoutMgr: LinearLayoutManager
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -319,6 +320,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun updateDisplay(view: View, value: String) {
         // Reset input with current number if following "equal"
         if (isEqualLastAction) {
@@ -483,6 +485,7 @@ class MainActivity : AppCompatActivity() {
         binding.degreeTextView.text = binding.degreeButton.text.toString()
     }
 
+    @SuppressLint("DefaultLocale", "SetTextI18n")
     private fun updateResultDisplay() {
         lifecycleScope.launch(Dispatchers.Default) {
             // Reset text color
@@ -563,6 +566,7 @@ class MainActivity : AppCompatActivity() {
         updateDisplay(view, (view as Button).text as String)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun addSymbol(view: View, currentSymbol: String) {
         // Get input text length
         val textLength = binding.input.text.length
@@ -759,13 +763,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     fun clearButton(view: View) {
         keyVibration(view)
         binding.input.setText("")
         binding.resultDisplay.setText("")
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "DefaultLocale")
     fun equalsButton(view: View) {
         lifecycleScope.launch(Dispatchers.Default) {
             keyVibration(view)
@@ -979,10 +984,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun scientistModeSwitchButton(view: View) {
+    fun scientistModeSwitchButton() {
         enableOrDisableScientistMode()
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onResume() {
         super.onResume()
 
