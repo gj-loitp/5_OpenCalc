@@ -101,7 +101,7 @@ android {
 dependencies {
     api fileTree(dir: "libs", include: ["*.jar"])
     api 'androidx.core:core-ktx:1.13.1'
-    api 'androidx.appcompat:appcompat:1.6.1'
+    api 'androidx.appcompat:appcompat:1.7.0'
     api 'androidx.preference:preference-ktx:1.2.1'
     api 'androidx.constraintlayout:constraintlayout:2.1.4'
     api 'com.google.android.material:material:1.10.0'
