@@ -24,7 +24,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.mckimquyen.BuildConfig
 import com.mckimquyen.R
 import com.mckimquyen.adt.HistoryAdapter
-import com.mckimquyen.databinding.ActivityMainBinding
+import com.mckimquyen.databinding.AMainBinding
 import com.mckimquyen.db.MyPreferences
 import com.mckimquyen.ext.Calculator
 import com.mckimquyen.ext.division_by_0
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
     private var isDegreeModeActivated = true // Set degree by default
     private var errorStatusOld = false
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: AMainBinding
     private lateinit var historyAdapter: HistoryAdapter
     private lateinit var historyLayoutMgr: LinearLayoutManager
 
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         themes.applyDayNightOverride()
         setTheme(themes.getTheme())
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = AMainBinding.inflate(layoutInflater)
         view = binding.root
         setContentView(view)
 
@@ -241,7 +241,7 @@ class MainActivity : AppCompatActivity() {
     fun openAppMenu(view: View) {
         val popup = PopupMenu(this, view)
         val inflater = popup.menuInflater
-        inflater.inflate(R.menu.app_menu, popup.menu)
+        inflater.inflate(R.menu.menu_app, popup.menu)
         popup.show()
     }
 

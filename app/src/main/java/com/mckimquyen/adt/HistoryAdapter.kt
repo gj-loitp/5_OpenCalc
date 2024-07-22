@@ -23,7 +23,7 @@ class HistoryAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
         val view = LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.history_item, parent, false)
+            .inflate(R.layout.i_history, parent, false)
         return HistoryViewHolder(view)
     }
 

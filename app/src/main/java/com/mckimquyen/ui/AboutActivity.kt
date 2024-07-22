@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.mckimquyen.BuildConfig
 import com.mckimquyen.R
-import com.mckimquyen.databinding.ActivityAboutBinding
+import com.mckimquyen.databinding.AAboutBinding
 import com.mckimquyen.db.MyPreferences
 import com.mckimquyen.ext.moreApp
 import com.mckimquyen.ext.openBrowserPolicy
@@ -15,7 +15,7 @@ import com.mckimquyen.ext.shareApp
 import com.mckimquyen.model.Themes
 
 class AboutActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityAboutBinding
+    private lateinit var binding: AAboutBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +36,7 @@ class AboutActivity : AppCompatActivity() {
             window.statusBarColor = ContextCompat.getColor(this, R.color.background_color)
         }
 
-        binding = ActivityAboutBinding.inflate(layoutInflater)
+        binding = AAboutBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 

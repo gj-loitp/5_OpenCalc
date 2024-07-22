@@ -30,7 +30,7 @@ class SettingsActivity : AppCompatActivity() {
         themes.applyDayNightOverride()
         setTheme(themes.getTheme())
 
-        setContentView(R.layout.settings_activity)
+        setContentView(R.layout.a_settings)
         if (savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
