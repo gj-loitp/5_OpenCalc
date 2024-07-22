@@ -98,7 +98,7 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:contentDescription="@string/app_name"
                         android:onClick="divideButton"
-                        app:srcCompat="@drawable/divide"
+                        app:srcCompat="@drawable/ic_divide"
                         tools:ignore="UsingOnClickInXml" />
 
                     <Button
@@ -183,7 +183,7 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:contentDescription="@string/app_name"
                         android:onClick="multiplyButton"
-                        app:srcCompat="@drawable/multiply"
+                        app:srcCompat="@drawable/ic_multiply"
                         tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
@@ -194,7 +194,7 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:contentDescription="@string/app_name"
                         android:onClick="parenthesesButton"
-                        app:srcCompat="@drawable/parentheses"
+                        app:srcCompat="@drawable/ic_parentheses"
                         tools:ignore="UsingOnClickInXml" />
 
                 </TableRow>
@@ -270,7 +270,7 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:contentDescription="@string/app_name"
                         android:onClick="subtractButton"
-                        app:srcCompat="@drawable/subtract"
+                        app:srcCompat="@drawable/ic_subtract"
                         tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
@@ -281,7 +281,7 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:contentDescription="@string/app_name"
                         android:onClick="exponentButton"
-                        app:srcCompat="@drawable/exponent"
+                        app:srcCompat="@drawable/ic_exponent"
                         tools:ignore="UsingOnClickInXml" />
 
                 </TableRow>
@@ -338,7 +338,7 @@
                         android:layout_weight="1"
                         android:contentDescription="@string/app_name"
                         android:onClick="pointButton"
-                        app:srcCompat="@drawable/dot"
+                        app:srcCompat="@drawable/ic_dot"
                         tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
@@ -350,7 +350,7 @@
                         android:contentDescription="@string/backspace"
                         android:onClick="backspaceButton"
                         android:paddingEnd="5dp"
-                        app:srcCompat="@drawable/backspace"
+                        app:srcCompat="@drawable/ic_backspace"
                         tools:ignore="RtlSymmetry,UsingOnClickInXml" />
 
                     <ImageButton
@@ -361,7 +361,7 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:contentDescription="@string/app_name"
                         android:onClick="addButton"
-                        app:srcCompat="@drawable/add"
+                        app:srcCompat="@drawable/ic_add"
                         tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
@@ -372,7 +372,7 @@
                         android:backgroundTint="?attr/button_equals_color"
                         android:contentDescription="@string/app_name"
                         android:onClick="equalsButton"
-                        app:srcCompat="@drawable/equals"
+                        app:srcCompat="@drawable/ic_equals"
                         tools:ignore="UsingOnClickInXml" />
 
                 </TableRow>
@@ -384,7 +384,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/display_background"
+            android:background="@drawable/ic_display_background"
             tools:context=".MainActivity">
 
             <androidx.recyclerview.widget.RecyclerView

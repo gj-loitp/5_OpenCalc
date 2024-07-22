@@ -37,7 +37,7 @@ class Themes(private val context: Context) {
             val preferences = MyPreferences(context)
 
             val builder = MaterialAlertDialogBuilder(context)
-            builder.background = ContextCompat.getDrawable(context, R.drawable.rounded)
+            builder.background = ContextCompat.getDrawable(context, R.drawable.ic_rounded)
 
             val systemName =
                 if (DynamicColors.isDynamicColorAvailable())

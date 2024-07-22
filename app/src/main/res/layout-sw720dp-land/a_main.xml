@@ -141,7 +141,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="0dp"
                         android:layout_weight="0.6"
-                        android:background="@drawable/circle"
+                        android:background="@drawable/ic_circle"
                         android:backgroundTint="?attr/foreground_color"
                         android:contentDescription="@string/app_name"
                         android:fontFamily="@style/RobotoFontCondensedLight"
@@ -306,7 +306,7 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:contentDescription="@string/app_name"
                         android:onClick="parenthesesButton"
-                        app:srcCompat="@drawable/parentheses"
+                        app:srcCompat="@drawable/ic_parentheses"
                         tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
@@ -317,7 +317,7 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:contentDescription="@string/app_name"
                         android:onClick="exponentButton"
-                        app:srcCompat="@drawable/exponent"
+                        app:srcCompat="@drawable/ic_exponent"
                         tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
@@ -328,7 +328,7 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:contentDescription="@string/app_name"
                         android:onClick="divideButton"
-                        app:srcCompat="@drawable/divide"
+                        app:srcCompat="@drawable/ic_divide"
                         tools:ignore="UsingOnClickInXml" />
                 </TableRow>
 
@@ -375,7 +375,7 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:contentDescription="@string/app_name"
                         android:onClick="multiplyButton"
-                        app:srcCompat="@drawable/multiply"
+                        app:srcCompat="@drawable/ic_multiply"
                         tools:ignore="UsingOnClickInXml" />
                 </TableRow>
 
@@ -409,7 +409,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/circle"
+                        android:background="@drawable/ic_circle"
                         android:onClick="keyDigitPadMappingToDisplay"
                         android:text="@string/six"
                         android:textSize="@dimen/button_text_size"
@@ -423,7 +423,7 @@
                         android:backgroundTint="?attr/button_symbol_color"
                         android:contentDescription="@string/app_name"
                         android:onClick="subtractButton"
-                        app:srcCompat="@drawable/subtract"
+                        app:srcCompat="@drawable/ic_subtract"
                         tools:ignore="UsingOnClickInXml" />
                 </TableRow>
 
@@ -471,7 +471,7 @@
                         android:contentDescription="@string/app_name"
                         android:onClick="addButton"
                         android:textSize="@dimen/button_text_size"
-                        app:srcCompat="@drawable/add"
+                        app:srcCompat="@drawable/ic_add"
                         tools:ignore="UsingOnClickInXml" />
                 </TableRow>
 
@@ -499,7 +499,7 @@
                         android:contentDescription="@string/app_name"
                         android:onClick="pointButton"
                         android:textSize="@dimen/button_text_size"
-                        app:srcCompat="@drawable/dot"
+                        app:srcCompat="@drawable/ic_dot"
                         tools:ignore="UsingOnClickInXml" />
 
                     <ImageButton
@@ -510,7 +510,7 @@
                         android:layout_weight="1"
                         android:contentDescription="@string/backspace"
                         android:onClick="backspaceButton"
-                        app:srcCompat="@drawable/backspace_720dp"
+                        app:srcCompat="@drawable/ic_backspace_720dp"
                         tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml" />
 
                     <ImageButton
@@ -521,7 +521,7 @@
                         android:backgroundTint="?attr/button_equals_color"
                         android:contentDescription="@string/app_name"
                         android:onClick="equalsButton"
-                        app:srcCompat="@drawable/equals"
+                        app:srcCompat="@drawable/ic_equals"
                         tools:ignore="UsingOnClickInXml" />
                 </TableRow>
             </TableLayout>
@@ -532,7 +532,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/display_background"
+            android:background="@drawable/ic_display_background"
             tools:context=".MainActivity">
 
             <androidx.recyclerview.widget.RecyclerView

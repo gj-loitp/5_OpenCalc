@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
         binding.tableLayout.layoutTransition = lt
 
         // Set decimalSeparator
-        binding.pointButton.setImageResource(if (decimalSeparatorSymbol == ",") R.drawable.comma else R.drawable.dot)
+        binding.pointButton.setImageResource(if (decimalSeparatorSymbol == ",") R.drawable.ic_comma else R.drawable.ic_dot)
 
         // Set history
         historyLayoutMgr = LinearLayoutManager(

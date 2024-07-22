@@ -8,7 +8,7 @@
 
         <Preference
             app:enabled="true"
-            app:icon="@drawable/language"
+            app:icon="@drawable/ic_language"
             app:key="mckimquyen.opencal.APP_LANGUAGE"
             app:selectable="true"
             app:summary="APP LANGUAGE"
@@ -16,39 +16,39 @@
 
         <SwitchPreferenceCompat
             app:defaultValue="true"
-            app:icon="@drawable/vibrate"
+            app:icon="@drawable/ic_vibrate"
             app:key="mckimquyen.opencal.KEY_VIBRATION_STATUS"
             app:singleLineTitle="false"
             app:summary="@string/preferences_vibration_summary"
             app:title="@string/preferences_vibration_title"
             app:useSimpleSummaryProvider="true"
-            app:widgetLayout="@drawable/material_switch" />
+            app:widgetLayout="@drawable/ic_material_switch" />
 
         <SwitchPreferenceCompat
             app:defaultValue="false"
-            app:icon="@drawable/thermostat"
+            app:icon="@drawable/ic_thermostat"
             app:key="mckimquyen.opencal.RADIANS_INSTEAD_OF_DEGREES_BY_DEFAULT"
             app:singleLineTitle="false"
             app:summary="@string/preferences_radians_instead_of_degrees_by_default_summary"
             app:title="@string/preferences_radians_instead_of_degrees_by_default_title"
             app:useSimpleSummaryProvider="true"
-            app:widgetLayout="@drawable/material_switch" />
+            app:widgetLayout="@drawable/ic_material_switch" />
 
         <SwitchPreferenceCompat
             app:defaultValue="true"
-            app:icon="@drawable/science"
+            app:icon="@drawable/ic_science"
             app:key="mckimquyen.opencal.SCIENTIFIC_MODE_ENABLED_BY_DEFAULT"
             app:singleLineTitle="false"
             app:summary="@string/preferences_scientif_mode_enabled_by_default_summary"
             app:title="@string/preferences_scientif_mode_enabled_by_default_title"
             app:useSimpleSummaryProvider="true"
-            app:widgetLayout="@drawable/material_switch" />
+            app:widgetLayout="@drawable/ic_material_switch" />
 
         <ListPreference
             app:defaultValue="10"
             app:entries="@array/number_precision_entries"
             app:entryValues="@array/number_precision_values"
-            app:icon="@drawable/precision"
+            app:icon="@drawable/ic_precision"
             app:key="mckimquyen.opencal.NUMBER_PRECISION"
             app:singleLineTitle="false"
             app:title="@string/preferences_number_precision"
@@ -73,7 +73,7 @@
             app:defaultValue="100"
             app:entries="@array/history_size_entries"
             app:entryValues="@array/history_size_values"
-            app:icon="@drawable/history"
+            app:icon="@drawable/ic_history"
             app:key="mckimquyen.opencal.HISTORY_SIZE"
             app:singleLineTitle="false"
             app:title="@string/preferences_history_size"
@@ -87,13 +87,13 @@
 
         <SwitchPreferenceCompat
             app:defaultValue="false"
-            app:icon="@drawable/bedtime"
+            app:icon="@drawable/ic_bedtime"
             app:key="mckimquyen.opencal.PREVENT_PHONE_FROM_SLEEPING"
             app:singleLineTitle="false"
             app:summary="@string/preferences_prevent_phone_from_sleeping_summary"
             app:title="@string/preferences_prevent_phone_from_sleeping_title"
             app:useSimpleSummaryProvider="true"
-            app:widgetLayout="@drawable/material_switch" />
+            app:widgetLayout="@drawable/ic_material_switch" />
 
     </PreferenceCategory>
 
