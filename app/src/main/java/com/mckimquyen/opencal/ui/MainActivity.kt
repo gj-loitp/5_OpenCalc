@@ -257,12 +257,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openGithub(menuItem: MenuItem) {
-        if (BuildConfig.DEBUG) {
-            this.openUrlInBrowser("https://github.com/tplloi/OpenCalc/tree/dev")
-        } else {
-            Toast.makeText(this, "This feature is only available in debug mode", Toast.LENGTH_SHORT)
-                .show()
-        }
+        this.openUrlInBrowser("https://github.com/gj-loitp/5_OpenCalc")
     }
 
     fun openSourceCode(menuItem: MenuItem) {

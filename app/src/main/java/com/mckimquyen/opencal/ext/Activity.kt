@@ -160,7 +160,7 @@ fun Activity.rateApp(
 }
 
 fun Activity.moreApp(
-    nameOfDeveloper: String = "Roy93Group"
+    nameOfDeveloper: String = "McKimQuyen"
 ) {
     val uri = "https://play.google.com/store/apps/developer?id=$nameOfDeveloper"
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
@@ -173,10 +173,10 @@ fun Activity.shareApp(
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"
         intent.putExtra(Intent.EXTRA_SUBJECT, this.getString(R.string.app_name))
-        var sAux = "\nỨng dụng này rất bổ ích, thân mời bạn tải về cài đặt để trải nghiệm\n\n"
+        var sAux = "\nThis application is very useful, please download and install to experience\n\n"
         sAux = sAux + "https://play.google.com/store/apps/details?id=" + this.packageName
         intent.putExtra(Intent.EXTRA_TEXT, sAux)
-        this.startActivity(Intent.createChooser(intent, "Vui lòng chọn"))
+        this.startActivity(Intent.createChooser(intent, "Please choose"))
     } catch (e: Exception) {
         e.printStackTrace()
     }
