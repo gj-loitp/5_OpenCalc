@@ -1,4 +1,4 @@
-package com.mckimquyen.model
+package com.mckimquyen.opencal.model
 
 import android.app.Activity
 import android.content.Context
@@ -7,8 +7,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import com.google.android.material.color.DynamicColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.mckimquyen.R
-import com.mckimquyen.db.MyPreferences
+import com.mckimquyen.opencal.R
+import com.mckimquyen.opencal.db.MyPreferences
 
 class Themes(private val context: Context) {
 

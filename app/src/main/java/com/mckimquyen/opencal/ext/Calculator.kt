@@ -1,4 +1,4 @@
-package com.mckimquyen.ext
+package com.mckimquyen.opencal.ext
 
 import java.math.BigInteger
 import kotlin.math.acos

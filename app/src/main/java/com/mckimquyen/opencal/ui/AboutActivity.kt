@@ -1,18 +1,18 @@
-package com.mckimquyen.ui
+package com.mckimquyen.opencal.ui
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.mckimquyen.BuildConfig
-import com.mckimquyen.R
-import com.mckimquyen.databinding.AAboutBinding
-import com.mckimquyen.db.MyPreferences
-import com.mckimquyen.ext.moreApp
-import com.mckimquyen.ext.openBrowserPolicy
-import com.mckimquyen.ext.rateApp
-import com.mckimquyen.ext.shareApp
-import com.mckimquyen.model.Themes
+import com.mckimquyen.opencal.BuildConfig
+import com.mckimquyen.opencal.R
+import com.mckimquyen.opencal.databinding.AAboutBinding
+import com.mckimquyen.opencal.db.MyPreferences
+import com.mckimquyen.opencal.ext.moreApp
+import com.mckimquyen.opencal.ext.openBrowserPolicy
+import com.mckimquyen.opencal.ext.rateApp
+import com.mckimquyen.opencal.ext.shareApp
+import com.mckimquyen.opencal.model.Themes
 
 class AboutActivity : AppCompatActivity() {
     private lateinit var binding: AAboutBinding

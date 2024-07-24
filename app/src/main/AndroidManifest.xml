@@ -19,14 +19,14 @@
         tools:ignore="UnusedAttribute">
 
         <activity
-            android:name=".ui.SettingsActivity"
+            android:name="com.mckimquyen.opencal.ui.SettingsActivity"
             android:exported="false"
             android:label="@string/title_activity_settings" />
         <activity
-            android:name=".ui.AboutActivity"
+            android:name="com.mckimquyen.opencal.ui.AboutActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.mckimquyen.opencal.ui.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
@@ -40,7 +40,7 @@
             android:name="applovin.sdk.key"
             android:value="@string/SDK_KEY" />
         <service
-            android:name=".sv.MyTileService"
+            android:name="com.mckimquyen.opencal.sv.MyTileService"
             android:exported="true"
             android:icon="@drawable/ic_launcher_foreground_tile"
             android:label="@string/app_name_display"

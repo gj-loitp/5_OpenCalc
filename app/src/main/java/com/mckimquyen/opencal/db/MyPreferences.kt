@@ -1,10 +1,10 @@
-package com.mckimquyen.db
+package com.mckimquyen.opencal.db
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.preference.PreferenceManager
 import com.google.gson.Gson
-import com.mckimquyen.model.History
+import com.mckimquyen.opencal.model.History
 
 class MyPreferences(context: Context) {
 

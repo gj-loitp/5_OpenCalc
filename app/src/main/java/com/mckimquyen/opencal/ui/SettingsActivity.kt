@@ -1,4 +1,4 @@
-package com.mckimquyen.ui
+package com.mckimquyen.opencal.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -11,9 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
-import com.mckimquyen.R
-import com.mckimquyen.db.MyPreferences
-import com.mckimquyen.model.Themes
+import com.mckimquyen.opencal.R
+import com.mckimquyen.opencal.db.MyPreferences
+import com.mckimquyen.opencal.model.Themes
 import java.util.*
 
 class SettingsActivity : AppCompatActivity() {

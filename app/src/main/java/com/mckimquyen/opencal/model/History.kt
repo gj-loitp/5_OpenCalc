@@ -1,4 +1,4 @@
-package com.mckimquyen.model
+package com.mckimquyen.opencal.model
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable

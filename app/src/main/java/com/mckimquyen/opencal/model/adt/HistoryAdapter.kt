@@ -1,4 +1,4 @@
-package com.mckimquyen.adt
+package com.mckimquyen.opencal.model.adt
 
 import android.annotation.SuppressLint
 import android.content.ClipData
@@ -12,8 +12,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.mckimquyen.R
-import com.mckimquyen.model.History
+import com.mckimquyen.opencal.R
+import com.mckimquyen.opencal.model.History
 
 class HistoryAdapter(
     private var history: MutableList<History>,

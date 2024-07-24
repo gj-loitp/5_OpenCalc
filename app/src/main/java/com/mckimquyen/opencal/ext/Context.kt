@@ -1,4 +1,4 @@
-package com.mckimquyen.ext
+package com.mckimquyen.opencal.ext
 
 import android.content.Context
 import android.content.Intent
