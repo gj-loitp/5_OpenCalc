@@ -87,7 +87,7 @@
     <string name="_45">45</string>
     <string name="get_more_apps">Get more apps</string>
     <string name="share_this_app">Share this app</string>
-    <string name="github">Github</string>
-    <string name="source_code">Source code</string>
+    <string name="github">Source code (Forked)</string>
+    <string name="source_code">Source code (Original)</string>
     <string name="license">License</string>
 </resources>
