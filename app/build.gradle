@@ -10,8 +10,8 @@ android {
         resourceConfigurations += ['ar', 'az', 'bn', 'bs', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hr', 'in', 'it', 'ja', 'mk', 'nb-rNO', 'pt-rBR', 'ru', 'tr', 'uk', 'vi', 'zh-rHK', 'zh-rTW']
         minSdkVersion 21
         targetSdkVersion 34
-        versionCode 20240722
-        versionName "2023.07.22"
+        versionCode 20240810
+        versionName "2023.08.10"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -105,10 +105,10 @@ dependencies {
     api 'androidx.preference:preference-ktx:1.2.1'
     api 'androidx.constraintlayout:constraintlayout:2.1.4'
     api 'com.google.android.material:material:1.12.0'
-    api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4"
     api 'com.github.hannesa2:AndroidSlidingUpPanel:4.5.0'
     api 'androidx.preference:preference-ktx:1.2.1'
     api 'com.google.code.gson:gson:2.10.1'
-    api 'com.applovin:applovin-sdk:11.11.3'
+    api 'com.applovin:applovin-sdk:12.5.0'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.14'
 }
