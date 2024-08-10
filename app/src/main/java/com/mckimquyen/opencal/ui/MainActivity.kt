@@ -7,6 +7,8 @@ import android.content.ClipboardManager
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.HapticFeedbackConstants
@@ -21,9 +23,6 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.mckimquyen.opencal.BuildConfig
-import com.mckimquyen.opencal.R
-import com.mckimquyen.opencal.model.adt.HistoryAdapter
 import com.mckimquyen.opencal.databinding.AMainBinding
 import com.mckimquyen.opencal.db.MyPreferences
 import com.mckimquyen.opencal.ext.Calculator
@@ -35,6 +34,7 @@ import com.mckimquyen.opencal.helper.Expression
 import com.mckimquyen.opencal.helper.NumberFormatter
 import com.mckimquyen.opencal.model.History
 import com.mckimquyen.opencal.model.Themes
+import com.mckimquyen.opencal.model.adt.HistoryAdapter
 import com.sothree.slidinguppanel.PanelSlideListener
 import com.sothree.slidinguppanel.PanelState
 import kotlinx.coroutines.Dispatchers
@@ -43,7 +43,8 @@ import kotlinx.coroutines.withContext
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
-import java.util.*
+import java.util.Locale
+
 
 var appLanguage: Locale = Locale.getDefault()
 
@@ -93,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         binding.tableLayout.layoutTransition = lt
 
         // Set decimalSeparator
-        binding.pointButton.setImageResource(if (decimalSeparatorSymbol == ",") R.drawable.ic_comma else R.drawable.ic_dot)
+        binding.pointButton.setImageResource(if (decimalSeparatorSymbol == ",") com.mckimquyen.opencal.R.drawable.ic_comma else com.mckimquyen.opencal.R.drawable.ic_dot)
 
         // Set history
         historyLayoutMgr = LinearLayoutManager(
@@ -184,7 +185,11 @@ class MainActivity : AppCompatActivity() {
                     )
                     // Only show a toast for Android 12 and lower.
                     if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
-                        Toast.makeText(this, R.string.value_copied, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            this,
+                            com.mckimquyen.opencal.R.string.value_copied,
+                            Toast.LENGTH_SHORT
+                        ).show()
                     true
                 }
 
@@ -242,7 +247,7 @@ class MainActivity : AppCompatActivity() {
     fun openAppMenu(view: View) {
         val popup = PopupMenu(this, view)
         val inflater = popup.menuInflater
-        inflater.inflate(R.menu.menu_app, popup.menu)
+        inflater.inflate(com.mckimquyen.opencal.R.menu.menu_app, popup.menu)
         popup.show()
     }
 
@@ -291,23 +296,28 @@ class MainActivity : AppCompatActivity() {
                 binding.input.setTextColor(
                     ContextCompat.getColor(
                         this,
-                        R.color.calculation_error_color
+                        com.mckimquyen.opencal.R.color.calculation_error_color
                     )
                 )
                 binding.resultDisplay.setTextColor(
                     ContextCompat.getColor(
                         this,
-                        R.color.calculation_error_color
+                        com.mckimquyen.opencal.R.color.calculation_error_color
                     )
                 )
             }
             // Clear error color
             else {
-                binding.input.setTextColor(ContextCompat.getColor(this, R.color.text_color))
+                binding.input.setTextColor(
+                    ContextCompat.getColor(
+                        this,
+                        com.mckimquyen.opencal.R.color.text_color
+                    )
+                )
                 binding.resultDisplay.setTextColor(
                     ContextCompat.getColor(
                         this,
-                        R.color.text_second_color
+                        com.mckimquyen.opencal.R.color.text_second_color
                     )
                 )
             }
@@ -455,13 +465,13 @@ class MainActivity : AppCompatActivity() {
         if (binding.scientistModeRow2.visibility != View.VISIBLE) {
             binding.scientistModeRow2.visibility = View.VISIBLE
             binding.scientistModeRow3.visibility = View.VISIBLE
-            binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
+            binding.scientistModeSwitchButton?.setImageResource(com.mckimquyen.opencal.R.drawable.ic_baseline_keyboard_arrow_up_24)
             binding.degreeTextView.visibility = View.VISIBLE
             binding.degreeTextView.text = binding.degreeButton.text.toString()
         } else {
             binding.scientistModeRow2.visibility = View.GONE
             binding.scientistModeRow3.visibility = View.GONE
-            binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
+            binding.scientistModeSwitchButton?.setImageResource(com.mckimquyen.opencal.R.drawable.ic_baseline_keyboard_arrow_down_24)
             binding.degreeTextView.visibility = View.GONE
             binding.degreeTextView.text = binding.degreeButton.text.toString()
         }
@@ -541,8 +551,8 @@ class MainActivity : AppCompatActivity() {
                     }
                 } else withContext(Dispatchers.Main) {
                     if (result.isInfinite() && !division_by_0 && !domain_error) {
-                        if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
-                        else binding.resultDisplay.setText(getString(R.string.value_too_large))
+                        if (result < 0) binding.resultDisplay.setText("-" + getString(com.mckimquyen.opencal.R.string.infinity))
+                        else binding.resultDisplay.setText(getString(com.mckimquyen.opencal.R.string.value_too_large))
                     } else {
                         withContext(Dispatchers.Main) {
                             binding.resultDisplay.setText("")
@@ -739,22 +749,22 @@ class MainActivity : AppCompatActivity() {
             isInvButtonClicked = true
 
             // change buttons
-            binding.sineButton.setText(R.string.sineInv)
-            binding.cosineButton.setText(R.string.cosineInv)
-            binding.tangentButton.setText(R.string.tangentInv)
-            binding.naturalLogarithmButton.setText(R.string.naturalLogarithmInv)
-            binding.logarithmButton.setText(R.string.logarithmInv)
-            binding.squareButton.setText(R.string.squareInv)
+            binding.sineButton.setText(com.mckimquyen.opencal.R.string.sineInv)
+            binding.cosineButton.setText(com.mckimquyen.opencal.R.string.cosineInv)
+            binding.tangentButton.setText(com.mckimquyen.opencal.R.string.tangentInv)
+            binding.naturalLogarithmButton.setText(com.mckimquyen.opencal.R.string.naturalLogarithmInv)
+            binding.logarithmButton.setText(com.mckimquyen.opencal.R.string.logarithmInv)
+            binding.squareButton.setText(com.mckimquyen.opencal.R.string.squareInv)
         } else {
             isInvButtonClicked = false
 
             // change buttons
-            binding.sineButton.setText(R.string.sine)
-            binding.cosineButton.setText(R.string.cosine)
-            binding.tangentButton.setText(R.string.tangent)
-            binding.naturalLogarithmButton.setText(R.string.naturalLogarithm)
-            binding.logarithmButton.setText(R.string.logarithm)
-            binding.squareButton.setText(R.string.square)
+            binding.sineButton.setText(com.mckimquyen.opencal.R.string.sine)
+            binding.cosineButton.setText(com.mckimquyen.opencal.R.string.cosine)
+            binding.tangentButton.setText(com.mckimquyen.opencal.R.string.tangent)
+            binding.naturalLogarithmButton.setText(com.mckimquyen.opencal.R.string.naturalLogarithm)
+            binding.logarithmButton.setText(com.mckimquyen.opencal.R.string.logarithm)
+            binding.squareButton.setText(com.mckimquyen.opencal.R.string.square)
         }
     }
 
@@ -869,19 +879,19 @@ class MainActivity : AppCompatActivity() {
                     withContext(Dispatchers.Main) {
                         if (syntax_error) {
                             setErrorColor(true)
-                            binding.resultDisplay.setText(getString(R.string.syntax_error))
+                            binding.resultDisplay.setText(getString(com.mckimquyen.opencal.R.string.syntax_error))
                         } else if (domain_error) {
                             setErrorColor(true)
-                            binding.resultDisplay.setText(getString(R.string.domain_error))
+                            binding.resultDisplay.setText(getString(com.mckimquyen.opencal.R.string.domain_error))
                         } else if (result.isInfinite()) {
                             if (division_by_0) {
                                 setErrorColor(true)
-                                binding.resultDisplay.setText(getString(R.string.division_by_0))
-                            } else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
-                            else binding.resultDisplay.setText(getString(R.string.value_too_large))
+                                binding.resultDisplay.setText(getString(com.mckimquyen.opencal.R.string.division_by_0))
+                            } else if (result < 0) binding.resultDisplay.setText("-" + getString(com.mckimquyen.opencal.R.string.infinity))
+                            else binding.resultDisplay.setText(getString(com.mckimquyen.opencal.R.string.value_too_large))
                         } else if (result.isNaN()) {
                             setErrorColor(true)
-                            binding.resultDisplay.setText(getString(R.string.math_error))
+                            binding.resultDisplay.setText(getString(com.mckimquyen.opencal.R.string.math_error))
                         } else {
                             binding.resultDisplay.setText(formattedResult)
                             isEqualLastAction =
@@ -1013,5 +1023,18 @@ class MainActivity : AppCompatActivity() {
 
         // Disable the keyboard on display EditText
         binding.input.showSoftInputOnFocus = false
+    }
+
+    private var doubleBackToExitPressedOnce: Boolean = false
+
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed()
+            return
+        }
+        this.doubleBackToExitPressedOnce = true
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_LONG).show()
+        Handler(Looper.getMainLooper()).postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
     }
 }
