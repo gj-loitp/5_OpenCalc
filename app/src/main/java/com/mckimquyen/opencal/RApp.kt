@@ -9,17 +9,19 @@ import com.mckimquyen.opencal.db.MyPreferences
 
 //TODO firebase
 //TODO applovin
+
 //TODO ic_launcher
-//TODO policy
-//TODO rate app, more app, share app
-//TODO leak canary
-//TODO permission ad id
 //TODO keystore
 //TODO github, fork github
 //TODO license
 //TODO double tap to exit
 //TODO join beta
+
 //done
+//leak canary
+//permission ad id
+//policy
+//rate app, more app, share app
 
 //https://github.com/tplloi/OpenCalc/tree/dev
 class RApp : Application() {
