@@ -37,4 +37,9 @@
         android:onClick="openLicense"
         android:title="@string/license"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:onClick="joinTesterCommunity"
+        android:title="@string/join_tester_community"
+        app:showAsAction="ifRoom" />
 </menu>

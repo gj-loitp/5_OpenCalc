@@ -273,6 +273,10 @@ class MainActivity : AppCompatActivity() {
         this.openUrlInBrowser("https://raw.githubusercontent.com/Darkempire78/OpenCalc/main/LICENSE")
     }
 
+    fun joinTesterCommunity(menuItem: MenuItem) {
+        showDialogTesterCommunity()
+    }
+
     fun clearHistory(menuItem: MenuItem) {
         // Clear preferences
         MyPreferences(this@MainActivity).saveHistory(this@MainActivity, mutableListOf())
@@ -1036,5 +1040,24 @@ class MainActivity : AppCompatActivity() {
         this.doubleBackToExitPressedOnce = true
         Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_LONG).show()
         Handler(Looper.getMainLooper()).postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
+    }
+
+    private fun showDialogTesterCommunity() {
+        val builder = android.app.AlertDialog.Builder(this)
+        builder.setTitle("Confirm")
+        builder.setMessage("If you are also a programmer and looking for testers to test your application. Join our tester community now")
+        builder.setPositiveButton(
+            "YES"
+        ) { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        builder.setNegativeButton(
+            "NO"
+        ) { dialog, _ -> // Do nothing
+            dialog.dismiss()
+        }
+        val alert = builder.create()
+        alert.show()
     }
 }

@@ -90,4 +90,5 @@
     <string name="github">Source code (Forked)</string>
     <string name="source_code">Source code (Original)</string>
     <string name="license">License</string>
+    <string name="join_tester_community">Join tester community</string>
 </resources>
