@@ -9,7 +9,6 @@ import com.mckimquyen.opencal.db.MyPreferences
 
 //TODO firebase
 //TODO applovin
-//TODO keystore
 
 //done
 //leak canary
@@ -20,6 +19,7 @@ import com.mckimquyen.opencal.db.MyPreferences
 //double tap to exit
 //join beta
 //ic_launcher
+//keystore
 
 //https://github.com/tplloi/OpenCalc/tree/dev
 class RApp : Application() {
