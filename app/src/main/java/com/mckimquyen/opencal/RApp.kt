@@ -9,8 +9,6 @@ import com.mckimquyen.opencal.db.MyPreferences
 
 //TODO firebase
 //TODO applovin
-
-//TODO ic_launcher
 //TODO keystore
 
 //done
@@ -21,6 +19,7 @@ import com.mckimquyen.opencal.db.MyPreferences
 //github, fork github
 //double tap to exit
 //join beta
+//ic_launcher
 
 //https://github.com/tplloi/OpenCalc/tree/dev
 class RApp : Application() {
