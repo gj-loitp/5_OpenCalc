@@ -23,6 +23,7 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.mckimquyen.opencal.databinding.AMainBinding
 import com.mckimquyen.opencal.db.MyPreferences
 import com.mckimquyen.opencal.ext.Calculator
@@ -1043,21 +1044,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDialogTesterCommunity() {
-        val builder = android.app.AlertDialog.Builder(this)
-        builder.setTitle("Confirm")
-        builder.setMessage("If you are also a programmer and looking for testers to test your application. Join our tester community now")
-        builder.setPositiveButton(
-            "YES"
-        ) { dialog, _ ->
-            dialog.dismiss()
-        }
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Confirm")
+            .setMessage("If you are also a programmer and looking for testers to test your application. Join our tester community now")
+            .setPositiveButton("OK") { dialog, _ ->
+                dialog.dismiss()
 
-        builder.setNegativeButton(
-            "NO"
-        ) { dialog, _ -> // Do nothing
-            dialog.dismiss()
-        }
-        val alert = builder.create()
-        alert.show()
+            }
+            .setNegativeButton("Cancel") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 }
