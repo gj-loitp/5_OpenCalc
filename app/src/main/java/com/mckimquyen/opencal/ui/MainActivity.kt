@@ -30,6 +30,7 @@ import com.mckimquyen.opencal.ext.Calculator
 import com.mckimquyen.opencal.ext.division_by_0
 import com.mckimquyen.opencal.ext.domain_error
 import com.mckimquyen.opencal.ext.openUrlInBrowser
+import com.mckimquyen.opencal.ext.rateApp
 import com.mckimquyen.opencal.ext.syntax_error
 import com.mckimquyen.opencal.helper.Expression
 import com.mckimquyen.opencal.helper.NumberFormatter
@@ -1049,7 +1050,7 @@ class MainActivity : AppCompatActivity() {
             .setMessage("If you are also a programmer and looking for testers to test your application. Join our tester community now")
             .setPositiveButton("OK") { dialog, _ ->
                 dialog.dismiss()
-
+                rateApp("com.mckimquyen.bemytester")
             }
             .setNegativeButton("Cancel") { dialog, _ ->
                 dialog.dismiss()

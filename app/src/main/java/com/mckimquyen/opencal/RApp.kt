@@ -12,7 +12,6 @@ import com.mckimquyen.opencal.db.MyPreferences
 
 //TODO ic_launcher
 //TODO keystore
-//TODO join beta
 
 //done
 //leak canary
@@ -21,6 +20,7 @@ import com.mckimquyen.opencal.db.MyPreferences
 //rate app, more app, share app
 //github, fork github
 //double tap to exit
+//join beta
 
 //https://github.com/tplloi/OpenCalc/tree/dev
 class RApp : Application() {
