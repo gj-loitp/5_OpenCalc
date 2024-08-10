@@ -995,7 +995,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun scientistModeSwitchButton() {
+    //do not delete params
+    fun scientistModeSwitchButton(view: View) {
         enableOrDisableScientistMode()
     }
 
