@@ -16,18 +16,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="UnusedAttribute">
+        tools:ignore="UnusedAttribute,DiscouragedApi,LockedOrientationActivity">
 
         <activity
             android:name="com.mckimquyen.opencal.ui.SettingsActivity"
             android:exported="false"
-            android:label="@string/title_activity_settings" />
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.mckimquyen.opencal.ui.AboutActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.mckimquyen.opencal.ui.MainActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
