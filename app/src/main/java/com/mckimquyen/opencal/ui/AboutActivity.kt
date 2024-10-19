@@ -1,5 +1,7 @@
 package com.mckimquyen.opencal.ui
 
+import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -77,5 +79,12 @@ class AboutActivity : AppCompatActivity() {
                 clickAppVersionCount = 0
             }
         }
+    }
+
+    override fun attachBaseContext(context: Context) {
+        val override = Configuration(context.resources.configuration)
+        override.fontScale = 1.0f
+        applyOverrideConfiguration(override)
+        super.attachBaseContext(context)
     }
 }

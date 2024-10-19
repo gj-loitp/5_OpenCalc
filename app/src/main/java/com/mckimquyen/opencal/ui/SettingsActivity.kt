@@ -1,6 +1,8 @@
 package com.mckimquyen.opencal.ui
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -14,7 +16,7 @@ import androidx.preference.PreferenceFragmentCompat
 import com.mckimquyen.opencal.R
 import com.mckimquyen.opencal.db.MyPreferences
 import com.mckimquyen.opencal.model.Themes
-import java.util.*
+import java.util.Locale
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -93,5 +95,12 @@ class SettingsActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun attachBaseContext(context: Context) {
+        val override = Configuration(context.resources.configuration)
+        override.fontScale = 1.0f
+        applyOverrideConfiguration(override)
+        super.attachBaseContext(context)
     }
 }
