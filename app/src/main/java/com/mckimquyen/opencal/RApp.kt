@@ -10,6 +10,7 @@ import com.mckimquyen.opencal.db.MyPreferences
 //TODO firebase
 //TODO applovin
 
+//font scale
 //done
 //leak canary
 //permission ad id
