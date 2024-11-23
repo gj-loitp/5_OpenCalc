@@ -269,8 +269,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openAbout(menuItem: MenuItem) {
-        val intent = Intent(this, AboutActivity::class.java)
-        startActivity(intent, null)
+        showAd {
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent, null)
+        }
     }
 
     fun openSettings(menuItem: MenuItem) {
