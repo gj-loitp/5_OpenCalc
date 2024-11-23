@@ -25,7 +25,12 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.applovin.mediation.MaxAd
+import com.applovin.mediation.MaxAdListener
+import com.applovin.mediation.MaxError
+import com.applovin.mediation.ads.MaxInterstitialAd
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.mckimquyen.opencal.R
 import com.mckimquyen.opencal.databinding.AMainBinding
 import com.mckimquyen.opencal.db.MyPreferences
 import com.mckimquyen.opencal.ext.Calculator
@@ -48,7 +53,6 @@ import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormatSymbols
 import java.util.Locale
-
 
 var appLanguage: Locale = Locale.getDefault()
 
@@ -105,7 +109,7 @@ class MainActivity : AppCompatActivity() {
         binding.tableLayout.layoutTransition = lt
 
         // Set decimalSeparator
-        binding.pointButton.setImageResource(if (decimalSeparatorSymbol == ",") com.mckimquyen.opencal.R.drawable.ic_comma else com.mckimquyen.opencal.R.drawable.ic_dot)
+        binding.pointButton.setImageResource(if (decimalSeparatorSymbol == ",") R.drawable.ic_comma else R.drawable.ic_dot)
 
         // Set history
         historyLayoutMgr = LinearLayoutManager(
@@ -198,7 +202,7 @@ class MainActivity : AppCompatActivity() {
                     if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
                         Toast.makeText(
                             this,
-                            com.mckimquyen.opencal.R.string.value_copied,
+                            R.string.value_copied,
                             Toast.LENGTH_SHORT
                         ).show()
                     true
@@ -249,6 +253,8 @@ class MainActivity : AppCompatActivity() {
                 // Do nothing
             }
         })
+
+        createAdInter()
     }
 
     fun selectThemeDialog(menuItem: MenuItem) {
@@ -258,7 +264,7 @@ class MainActivity : AppCompatActivity() {
     fun openAppMenu(view: View) {
         val popup = PopupMenu(this, view)
         val inflater = popup.menuInflater
-        inflater.inflate(com.mckimquyen.opencal.R.menu.menu_app, popup.menu)
+        inflater.inflate(R.menu.menu_app, popup.menu)
         popup.show()
     }
 
@@ -268,8 +274,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openSettings(menuItem: MenuItem) {
-        val intent = Intent(this, SettingsActivity::class.java)
-        startActivity(intent, null)
+        showAd {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent, null)
+        }
     }
 
     fun openGithub(menuItem: MenuItem) {
@@ -311,13 +319,13 @@ class MainActivity : AppCompatActivity() {
                 binding.input.setTextColor(
                     ContextCompat.getColor(
                         this,
-                        com.mckimquyen.opencal.R.color.calculation_error_color
+                        R.color.calculation_error_color
                     )
                 )
                 binding.resultDisplay.setTextColor(
                     ContextCompat.getColor(
                         this,
-                        com.mckimquyen.opencal.R.color.calculation_error_color
+                        R.color.calculation_error_color
                     )
                 )
             }
@@ -326,13 +334,13 @@ class MainActivity : AppCompatActivity() {
                 binding.input.setTextColor(
                     ContextCompat.getColor(
                         this,
-                        com.mckimquyen.opencal.R.color.text_color
+                        R.color.text_color
                     )
                 )
                 binding.resultDisplay.setTextColor(
                     ContextCompat.getColor(
                         this,
-                        com.mckimquyen.opencal.R.color.text_second_color
+                        R.color.text_second_color
                     )
                 )
             }
@@ -480,13 +488,13 @@ class MainActivity : AppCompatActivity() {
         if (binding.scientistModeRow2.visibility != View.VISIBLE) {
             binding.scientistModeRow2.visibility = View.VISIBLE
             binding.scientistModeRow3.visibility = View.VISIBLE
-            binding.scientistModeSwitchButton?.setImageResource(com.mckimquyen.opencal.R.drawable.ic_baseline_keyboard_arrow_up_24)
+            binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
             binding.degreeTextView.visibility = View.VISIBLE
             binding.degreeTextView.text = binding.degreeButton.text.toString()
         } else {
             binding.scientistModeRow2.visibility = View.GONE
             binding.scientistModeRow3.visibility = View.GONE
-            binding.scientistModeSwitchButton?.setImageResource(com.mckimquyen.opencal.R.drawable.ic_baseline_keyboard_arrow_down_24)
+            binding.scientistModeSwitchButton?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
             binding.degreeTextView.visibility = View.GONE
             binding.degreeTextView.text = binding.degreeButton.text.toString()
         }
@@ -566,8 +574,8 @@ class MainActivity : AppCompatActivity() {
                     }
                 } else withContext(Dispatchers.Main) {
                     if (result.isInfinite() && !division_by_0 && !domain_error) {
-                        if (result < 0) binding.resultDisplay.setText("-" + getString(com.mckimquyen.opencal.R.string.infinity))
-                        else binding.resultDisplay.setText(getString(com.mckimquyen.opencal.R.string.value_too_large))
+                        if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
+                        else binding.resultDisplay.setText(getString(R.string.value_too_large))
                     } else {
                         withContext(Dispatchers.Main) {
                             binding.resultDisplay.setText("")
@@ -764,22 +772,22 @@ class MainActivity : AppCompatActivity() {
             isInvButtonClicked = true
 
             // change buttons
-            binding.sineButton.setText(com.mckimquyen.opencal.R.string.sineInv)
-            binding.cosineButton.setText(com.mckimquyen.opencal.R.string.cosineInv)
-            binding.tangentButton.setText(com.mckimquyen.opencal.R.string.tangentInv)
-            binding.naturalLogarithmButton.setText(com.mckimquyen.opencal.R.string.naturalLogarithmInv)
-            binding.logarithmButton.setText(com.mckimquyen.opencal.R.string.logarithmInv)
-            binding.squareButton.setText(com.mckimquyen.opencal.R.string.squareInv)
+            binding.sineButton.setText(R.string.sineInv)
+            binding.cosineButton.setText(R.string.cosineInv)
+            binding.tangentButton.setText(R.string.tangentInv)
+            binding.naturalLogarithmButton.setText(R.string.naturalLogarithmInv)
+            binding.logarithmButton.setText(R.string.logarithmInv)
+            binding.squareButton.setText(R.string.squareInv)
         } else {
             isInvButtonClicked = false
 
             // change buttons
-            binding.sineButton.setText(com.mckimquyen.opencal.R.string.sine)
-            binding.cosineButton.setText(com.mckimquyen.opencal.R.string.cosine)
-            binding.tangentButton.setText(com.mckimquyen.opencal.R.string.tangent)
-            binding.naturalLogarithmButton.setText(com.mckimquyen.opencal.R.string.naturalLogarithm)
-            binding.logarithmButton.setText(com.mckimquyen.opencal.R.string.logarithm)
-            binding.squareButton.setText(com.mckimquyen.opencal.R.string.square)
+            binding.sineButton.setText(R.string.sine)
+            binding.cosineButton.setText(R.string.cosine)
+            binding.tangentButton.setText(R.string.tangent)
+            binding.naturalLogarithmButton.setText(R.string.naturalLogarithm)
+            binding.logarithmButton.setText(R.string.logarithm)
+            binding.squareButton.setText(R.string.square)
         }
     }
 
@@ -894,19 +902,19 @@ class MainActivity : AppCompatActivity() {
                     withContext(Dispatchers.Main) {
                         if (syntax_error) {
                             setErrorColor(true)
-                            binding.resultDisplay.setText(getString(com.mckimquyen.opencal.R.string.syntax_error))
+                            binding.resultDisplay.setText(getString(R.string.syntax_error))
                         } else if (domain_error) {
                             setErrorColor(true)
-                            binding.resultDisplay.setText(getString(com.mckimquyen.opencal.R.string.domain_error))
+                            binding.resultDisplay.setText(getString(R.string.domain_error))
                         } else if (result.isInfinite()) {
                             if (division_by_0) {
                                 setErrorColor(true)
-                                binding.resultDisplay.setText(getString(com.mckimquyen.opencal.R.string.division_by_0))
-                            } else if (result < 0) binding.resultDisplay.setText("-" + getString(com.mckimquyen.opencal.R.string.infinity))
-                            else binding.resultDisplay.setText(getString(com.mckimquyen.opencal.R.string.value_too_large))
+                                binding.resultDisplay.setText(getString(R.string.division_by_0))
+                            } else if (result < 0) binding.resultDisplay.setText("-" + getString(R.string.infinity))
+                            else binding.resultDisplay.setText(getString(R.string.value_too_large))
                         } else if (result.isNaN()) {
                             setErrorColor(true)
-                            binding.resultDisplay.setText(getString(com.mckimquyen.opencal.R.string.math_error))
+                            binding.resultDisplay.setText(getString(R.string.math_error))
                         } else {
                             binding.resultDisplay.setText(formattedResult)
                             isEqualLastAction =
@@ -1066,5 +1074,89 @@ class MainActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
             .show()
+    }
+
+    private var interstitialAd: MaxInterstitialAd? = null
+
+    private fun createAdInter() {
+        val enableAdInter = getString(R.string.EnableAdInter) == "true"
+        if (enableAdInter) {
+            interstitialAd = MaxInterstitialAd(getString(R.string.INTER), this)
+            interstitialAd?.let { ad ->
+                ad.setListener(object : MaxAdListener {
+                    override fun onAdLoaded(p0: MaxAd) {
+//                        logI("onAdLoaded")
+//                        retryAttempt = 0
+                    }
+
+                    override fun onAdDisplayed(p0: MaxAd) {
+//                        logI("onAdDisplayed")
+                    }
+
+                    override fun onAdHidden(p0: MaxAd) {
+//                        logI("onAdHidden")
+                        // Interstitial Ad is hidden. Pre-load the next ad
+                        interstitialAd?.loadAd()
+                    }
+
+                    override fun onAdClicked(p0: MaxAd) {
+//                        logI("onAdClicked")
+                    }
+
+                    override fun onAdLoadFailed(p0: String, p1: MaxError) {
+//                        logI("onAdLoadFailed")
+//                        retryAttempt++
+//                        val delayMillis =
+//                            TimeUnit.SECONDS.toMillis(2.0.pow(min(6, retryAttempt)).toLong())
+//
+//                        Handler(Looper.getMainLooper()).postDelayed(
+//                            {
+//                                interstitialAd?.loadAd()
+//                            }, delayMillis
+//                        )
+                    }
+
+                    override fun onAdDisplayFailed(p0: MaxAd, p1: MaxError) {
+//                        logI("onAdDisplayFailed")
+                        // Interstitial ad failed to display. We recommend loading the next ad.
+                        interstitialAd?.loadAd()
+                    }
+
+                })
+                ad.setRevenueListener {
+//                    logI("onAdDisplayed")
+                }
+
+                // Load the first ad.
+                ad.loadAd()
+            }
+        }
+    }
+
+    private fun showAd(runnable: Runnable? = null) {
+        val enableAdInter = getString(R.string.EnableAdInter) == "true"
+        if (enableAdInter) {
+            if (interstitialAd == null) {
+                runnable?.run()
+            } else {
+                interstitialAd?.let { ad ->
+                    if (ad.isReady) {
+//                        showDialogProgress()
+//                        setDelay(500.getRandomNumber() + 500) {
+//                            hideDialogProgress()
+//                            ad.showAd()
+//                            runnable?.run()
+//                        }
+                        ad.showAd()
+                        runnable?.run()
+                    } else {
+                        runnable?.run()
+                    }
+                }
+            }
+        } else {
+            Toast.makeText(this, "Applovin show ad Inter in debug mode", Toast.LENGTH_SHORT).show()
+            runnable?.run()
+        }
     }
 }
