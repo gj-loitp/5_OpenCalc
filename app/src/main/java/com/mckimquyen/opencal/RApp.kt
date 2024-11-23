@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_UNSPECIFIED
 import androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode
 import com.mckimquyen.opencal.db.MyPreferences
+import com.mckimquyen.watermark.utils.setupApplovinAd
 
 //TODO firebase
-//TODO applovin
 
+//applovin done ad id
 //font scale
 //done
 //leak canary
@@ -27,6 +28,8 @@ class RApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        this.setupApplovinAd()
 
         // if the theme is overriding the system, the first creation doesn't work properly
         val forceDayNight = MyPreferences(this).forceDayNight

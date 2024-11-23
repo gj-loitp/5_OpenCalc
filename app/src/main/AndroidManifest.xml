@@ -40,9 +40,6 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="applovin.sdk.key"
-            android:value="@string/SDK_KEY" />
         <service
             android:name="com.mckimquyen.opencal.sv.MyTileService"
             android:exported="true"
