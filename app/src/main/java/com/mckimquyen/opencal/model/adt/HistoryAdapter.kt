@@ -72,24 +72,24 @@ class HistoryAdapter(
             calculation.text = historyElement.calculation
             result.text = historyElement.result
             // To avoid crashes with former histories that do not have stored dates
-            if (historyElement.time.isEmpty()) {
+            if (historyElement.time.isNullOrEmpty() == true) {
                 time.visibility = View.GONE
             } else {
                 time.text = DateUtils.getRelativeTimeSpanString(
-                    historyElement.time.toLong(),
-                    System.currentTimeMillis(),
-                    DateUtils.DAY_IN_MILLIS,
-                    DateUtils.FORMAT_ABBREV_RELATIVE,
+                    /* time = */ historyElement.time.toLong(),
+                    /* now = */ System.currentTimeMillis(),
+                    /* minResolution = */ DateUtils.DAY_IN_MILLIS,
+                    /* flags = */ DateUtils.FORMAT_ABBREV_RELATIVE,
                 )
                 // Check if the former result has the same date -> hide the date
                 if (position > 0) {
                     if (
-                        history[position - 1].time.isNotEmpty()
+                        history[position - 1].time?.isNotEmpty() == true
                         && DateUtils.getRelativeTimeSpanString(
-                            history[position - 1].time.toLong(),
-                            System.currentTimeMillis(),
-                            DateUtils.DAY_IN_MILLIS,
-                            DateUtils.FORMAT_ABBREV_RELATIVE,
+                            /* time = */ history[position - 1].time?.toLong() ?: 0,
+                            /* now = */ System.currentTimeMillis(),
+                            /* minResolution = */ DateUtils.DAY_IN_MILLIS,
+                            /* flags = */ DateUtils.FORMAT_ABBREV_RELATIVE,
                         ) == time.text
                     ) {
                         time.visibility = View.GONE
@@ -103,10 +103,10 @@ class HistoryAdapter(
                 if (position + 1 < history.size) {
                     if (
                         DateUtils.getRelativeTimeSpanString(
-                            history[position + 1].time.toLong(),
-                            System.currentTimeMillis(),
-                            DateUtils.DAY_IN_MILLIS,
-                            DateUtils.FORMAT_ABBREV_RELATIVE,
+                            /* time = */ history[position + 1].time?.toLong() ?: 0,
+                            /* now = */ System.currentTimeMillis(),
+                            /* minResolution = */ DateUtils.DAY_IN_MILLIS,
+                            /* flags = */ DateUtils.FORMAT_ABBREV_RELATIVE,
                         ) == time.text
                     ) {
                         separator.visibility = View.GONE
@@ -124,10 +124,14 @@ class HistoryAdapter(
 
             // On click
             calculation.setOnClickListener {
-                onElementClick.invoke(historyElement.calculation)
+                historyElement.calculation?.let {
+                    onElementClick.invoke(it)
+                }
             }
             result.setOnClickListener {
-                onElementClick.invoke(historyElement.result)
+                historyElement.result?.let {
+                    onElementClick.invoke(it)
+                }
             }
             calculation.setOnLongClickListener {
                 val clipboardManager =
