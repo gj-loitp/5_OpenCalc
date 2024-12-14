@@ -8,10 +8,8 @@ import android.util.Log
 import android.view.Display
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.play.core.review.ReviewException
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManagerFactory
-import com.google.android.play.core.review.model.ReviewErrorCode
 import java.util.Calendar
 import kotlin.apply
 import kotlin.collections.maxByOrNull
@@ -78,14 +76,13 @@ fun Activity.rateAppInApp(forceRateInApp: Boolean = false) {
                 val reviewInfo: ReviewInfo = task.result
                 reviewManager.launchReviewFlow(this, reviewInfo)
                 sharedPreferences.edit().putLong("last_review_time", currentTime).apply()
-                Log.d("roy93~", "requestReview result ${task.result}")
-                Log.d("roy93~", "requestReview isSuccessful ${task.isSuccessful}")
-                Log.d("roy93~", "requestReview isCanceled ${task.isCanceled}")
-                Log.d("roy93~", "requestReview isComplete ${task.isComplete}")
-                Log.d("roy93~", "requestReview exception ${task.exception}")
+//                Log.d("roy93~", "requestReview result ${task.result}")
+//                Log.d("roy93~", "requestReview isSuccessful ${task.isSuccessful}")
+//                Log.d("roy93~", "requestReview isCanceled ${task.isCanceled}")
+//                Log.d("roy93~", "requestReview isComplete ${task.isComplete}")
+//                Log.d("roy93~", "requestReview exception ${task.exception}")
             } else {
-                @ReviewErrorCode val reviewErrorCode = (task.exception as ReviewException?)?.errorCode
-                Log.e("roy93~", "requestReview error $reviewErrorCode")
+//                Log.e("roy93~", "requestReview error ${task.exception}")
             }
         }
     }
