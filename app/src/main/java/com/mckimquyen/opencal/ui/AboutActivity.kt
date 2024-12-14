@@ -1,12 +1,10 @@
 package com.mckimquyen.opencal.ui
 
-import android.content.Context
-import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.applovin.mediation.ads.MaxAdView
+import com.mckimquyen.opencal.BaseActivity
 import com.mckimquyen.opencal.BuildConfig
 import com.mckimquyen.opencal.R
 import com.mckimquyen.opencal.databinding.AAboutBinding
@@ -19,7 +17,7 @@ import com.mckimquyen.opencal.model.Themes
 import com.mckimquyen.watermark.utils.createAdBanner
 import com.mckimquyen.watermark.utils.destroyAdBanner
 
-class AboutActivity : AppCompatActivity() {
+class AboutActivity : BaseActivity() {
     private lateinit var binding: AAboutBinding
     private var adView: MaxAdView? = null
 
@@ -94,12 +92,5 @@ class AboutActivity : AppCompatActivity() {
     override fun onDestroy() {
         binding.flAd.destroyAdBanner(adView)
         super.onDestroy()
-    }
-
-    override fun attachBaseContext(context: Context) {
-        val override = Configuration(context.resources.configuration)
-        override.fontScale = 1.0f
-        applyOverrideConfiguration(override)
-        super.attachBaseContext(context)
     }
 }

@@ -1,8 +1,6 @@
 package com.mckimquyen.opencal.ui
 
-import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -10,11 +8,11 @@ import android.provider.Settings
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.applovin.mediation.ads.MaxAdView
+import com.mckimquyen.opencal.BaseActivity
 import com.mckimquyen.opencal.R
 import com.mckimquyen.opencal.db.MyPreferences
 import com.mckimquyen.opencal.model.Themes
@@ -22,7 +20,7 @@ import com.mckimquyen.watermark.utils.createAdBanner
 import com.mckimquyen.watermark.utils.destroyAdBanner
 import java.util.Locale
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : BaseActivity() {
 
     private var adView: MaxAdView? = null
 
@@ -114,10 +112,4 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
-    override fun attachBaseContext(context: Context) {
-        val override = Configuration(context.resources.configuration)
-        override.fontScale = 1.0f
-        applyOverrideConfiguration(override)
-        super.attachBaseContext(context)
-    }
 }

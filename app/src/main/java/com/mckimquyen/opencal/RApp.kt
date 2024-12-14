@@ -9,10 +9,10 @@ import com.mckimquyen.opencal.db.MyPreferences
 import com.mckimquyen.watermark.utils.setupApplovinAd
 
 //TODO firebase
-//TODO roy93~ 120hz
-//TODO roy93~ review in app
 
+//review in app
 //applovin done ad id
+//120hz
 //font scale
 //done
 //leak canary

@@ -4,9 +4,7 @@ import android.animation.LayoutTransition
 import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
-import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -20,7 +18,6 @@ import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
 import android.widget.HorizontalScrollView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
@@ -30,6 +27,7 @@ import com.applovin.mediation.MaxAdListener
 import com.applovin.mediation.MaxError
 import com.applovin.mediation.ads.MaxInterstitialAd
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.mckimquyen.opencal.BaseActivity
 import com.mckimquyen.opencal.R
 import com.mckimquyen.opencal.databinding.AMainBinding
 import com.mckimquyen.opencal.db.MyPreferences
@@ -56,7 +54,7 @@ import java.util.Locale
 
 var appLanguage: Locale = Locale.getDefault()
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private lateinit var view: View
 
     private val decimalSeparatorSymbol =
@@ -71,13 +69,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: AMainBinding
     private lateinit var historyAdapter: HistoryAdapter
     private lateinit var historyLayoutMgr: LinearLayoutManager
-
-    override fun attachBaseContext(context: Context) {
-        val override = Configuration(context.resources.configuration)
-        override.fontScale = 1.0f
-        applyOverrideConfiguration(override)
-        super.attachBaseContext(context)
-    }
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
