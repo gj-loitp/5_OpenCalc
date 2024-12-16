@@ -14,6 +14,7 @@ import com.mckimquyen.opencal.ext.openBrowserPolicy
 import com.mckimquyen.opencal.ext.rateApp
 import com.mckimquyen.opencal.ext.shareApp
 import com.mckimquyen.opencal.model.Themes
+import com.mckimquyen.opencal.rateAppInApp
 import com.mckimquyen.watermark.utils.createAdBanner
 import com.mckimquyen.watermark.utils.destroyAdBanner
 
@@ -25,6 +26,11 @@ class AboutActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         setupViews()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        rateAppInApp(BuildConfig.DEBUG)
     }
 
     private fun setupViews() {

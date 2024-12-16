@@ -9,6 +9,7 @@ import com.mckimquyen.opencal.db.MyPreferences
 import com.mckimquyen.watermark.utils.setupApplovinAd
 
 //TODO firebase
+//TODO splash screen
 
 //review in app
 //applovin done ad id

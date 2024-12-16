@@ -13,9 +13,11 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.applovin.mediation.ads.MaxAdView
 import com.mckimquyen.opencal.BaseActivity
+import com.mckimquyen.opencal.BuildConfig
 import com.mckimquyen.opencal.R
 import com.mckimquyen.opencal.db.MyPreferences
 import com.mckimquyen.opencal.model.Themes
+import com.mckimquyen.opencal.rateAppInApp
 import com.mckimquyen.watermark.utils.createAdBanner
 import com.mckimquyen.watermark.utils.destroyAdBanner
 import java.util.Locale
@@ -28,6 +30,11 @@ class SettingsActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         setupViews(savedInstanceState)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        rateAppInApp(BuildConfig.DEBUG)
     }
 
     private fun setupViews(savedInstanceState: Bundle?) {
