@@ -28,6 +28,7 @@ import com.applovin.mediation.MaxError
 import com.applovin.mediation.ads.MaxInterstitialAd
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.mckimquyen.opencal.BaseActivity
+import com.mckimquyen.opencal.BuildConfig
 import com.mckimquyen.opencal.R
 import com.mckimquyen.opencal.databinding.AMainBinding
 import com.mckimquyen.opencal.db.MyPreferences
@@ -1140,7 +1141,15 @@ class MainActivity : BaseActivity() {
 //                            ad.showAd()
 //                            runnable?.run()
 //                        }
-                        ad.showAd()
+                        if (BuildConfig.DEBUG) {
+                            Toast.makeText(
+                                this,
+                                "Applovin show ad Inter in debug mode SUCCESSFULLY",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        } else {
+                            ad.showAd()
+                        }
                         runnable?.run()
                     } else {
                         runnable?.run()
@@ -1148,7 +1157,11 @@ class MainActivity : BaseActivity() {
                 }
             }
         } else {
-            Toast.makeText(this, "Applovin show ad Inter in debug mode", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                "Applovin show ad Inter in debug mode SUCCESSFULLY",
+                Toast.LENGTH_SHORT
+            ).show()
             runnable?.run()
         }
     }
